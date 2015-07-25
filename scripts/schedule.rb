@@ -1,19 +1,29 @@
 # encoding: utf-8
 
 
-def find_schedule( txt, header )
+def find_schedule( txt, opts={} )
 
   ## find match schedule/fixtures in multi-league doc
   new_txt = ''
 
+  header = opts[:header]
+  if header
+    league_header_found        = false
+  else
+    league_header_found        = true   # default (no header; assume single league file)
+  end
+
+
   ## stages
-  league_header_found        = false
   first_round_header_found   = false
   round_header_found         = false
+  round_body_found           = false   ## allow round header followed by blank lines
+
+  blank_found = false
 
 
   txt.each_line do |line|
-    
+
     if league_header_found == false
       ## first find start of league header/section
       ## assumes heading 4 for now
@@ -30,6 +40,7 @@ def find_schedule( txt, header )
         puts "!!! bingo - found first round >#{line}<"
         first_round_header_found = true
         round_header_found       = true
+        round_body_found         = false
         new_txt << line
       elsif line =~ /=-=-=-=/
         puts "*** no rounds found; hit section marker (horizontal rule)"
@@ -42,9 +53,16 @@ def find_schedule( txt, header )
       ##   assume text block until next blank line
       ##   new block must allways start w/ round
       if line =~ /^\s*$/   ## blank line?
-        round_header_found = false  
-        new_txt << line
+        if round_body_found
+          round_header_found = false
+          blank_found        = true    ## keep track of blank (lines) - allow inside round block (can continue w/ date header/marker)
+          new_txt << line
+        else
+          ## note: skip blanks following header
+          next
+        end
       else
+        round_body_found = true
         new_txt << line   ## keep going until next blank line
       end
     else
@@ -54,11 +72,19 @@ def find_schedule( txt, header )
       elsif line =~ /Round/i
         puts "!!! bingo - found new round >#{line}<"
         round_header_found = true   # more rounds; continue
+        round_body_found   = false
+        blank_found        = false  # reset blank tracker
+        new_txt << line
+      elsif blank_found && line =~ /\[[a-z]{3} \d{1,2}\]/i   ## e.g. [Mar 13] or [May 5] with leading blank line; continue round
+        puts "!!! bingo - continue round >#{line}<"
+        round_header_found = true
+        blank_found        = false  # reset blank tracker
         new_txt << line
       elsif line =~ /=-=-=-=/
         puts "!!! stop schedule; hit section marker (horizontal rule)"
         break;
       else
+        blank_found  = false
         puts "skipping line in schedule >#{line}<"
         next # continue
       end

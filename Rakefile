@@ -7,6 +7,10 @@ require './scripts/schedule'
 
 YEAR_TO_SEASON =
 {
+  64   => '1963-64',
+  65   => '1964-65',
+  66   => '1965-66',
+  67   => '1966-67',
   2011 => '2010-11',
   2012 => '2011-12',
   2013 => '2012-13',
@@ -32,9 +36,11 @@ ENG_REPO = '../en-england'
 
 
 DE_BASE = 'http://www.rsssf.com/tablesd'
-DE      = [2011, 2012, 2013, 2014, 2015]
+DE      = [64, 65, 66, 67, 2011, 2012, 2013, 2014, 2015]
+## DE = [64, 65, 66, 67]
 ## DE = [2015]
 ## e.g. http://www.rsssf.com/tablesd/duit2014.html
+##      http://www.rsssf.com/tablesd/duit64.html
 
 DE_REPO = '../de-deutschland'
 
@@ -49,7 +55,7 @@ task :eng2 do
     txt   = File.read( src_txt )
     txt.force_encoding( 'ASCII-8BIT' )  ## fix: check for chars > 127 (e.g. not 7-bit)
     ## pp txt
-    schedule = find_schedule( txt, 'Premiership|Premier League' )
+    schedule = find_schedule( txt, header: 'Premiership|Premier League' )
     pp schedule
 
     dest_path = "#{ENG_REPO}/#{YEAR_TO_SEASON[year]}/1-premierleague.txt"
@@ -96,7 +102,13 @@ task :de2 do
     txt   = File.read( src_txt )
     txt.force_encoding( 'ASCII-8BIT' )  ## fix: check for chars > 127 (e.g. not 7-bit)
     ## pp txt
-    schedule = find_schedule( txt, '1\. Bundesliga' )
+    if year < 100
+      opts = {}  # no header; assume single league file
+    else
+      opts = { header: '1\. Bundesliga' }
+    end
+    
+    schedule = find_schedule( txt, opts )
     ## pp schedule
 
     dest_path = "#{DE_REPO}/#{YEAR_TO_SEASON[year]}/1-bundesliga.txt"
