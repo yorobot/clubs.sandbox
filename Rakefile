@@ -47,7 +47,7 @@ DE_REPO = '../de-deutschland'
 
 
 AT_BASE = 'http://www.rsssf.com/tableso'
-AT      = [2011, 2012, 2013, 2014, 2015]
+AT      = [2011, 2012, 2013, 2014, 2015, 2016]
 ## e.g. http://www.rsssf.com/tableso/oost2015.html 
 AT_REPO = '../at-austria'
 
@@ -109,14 +109,31 @@ task :at do
 end
 
 task :at2 do
+  stats = []
+
   cfg = ScheduleConfig.new
   cfg.name = '1-bundesliga'
   cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'Bundesliga' ] }
   cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
 
-  make_schedules( AT, 'oost', AT_REPO, cfg )
+  stats += make_schedules( AT, 'oost', AT_REPO, cfg )
+
+  cfg.name = 'cup'
+  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: '.FB Cup', cup: true ] }  ## fix: utf8- for ÖFB Cup
+
+  stats += make_schedules( AT, 'oost', AT_REPO, cfg )
+
+  make_readme( 'Austria (Österreich)', AT_REPO, stats )
 end
 
+task :debugat do
+  cfg = ScheduleConfig.new
+  cfg.name = 'cup'
+  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: '.FB Cup', cup: true ] }  ## fix: utf8- for ÖFB Cup
+  cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
+
+  make_schedules( [2013], 'oost', AT_REPO, cfg )
+end
 
 
 task :es do
@@ -160,6 +177,9 @@ ScheduleConfig = Struct.new(
 
 def make_schedules( years, shortcut, repo, cfg )
 
+  ## note: return stats (for report eg. README)
+  stats = []
+
   years.each do |year|
     src_txt = "#{repo}/tables/#{shortcut}#{year}.txt"
     puts "  reading >#{src_txt}<"
@@ -170,7 +190,7 @@ def make_schedules( years, shortcut, repo, cfg )
     ## header: 'Primera' --  ## fix: use utf-8 e.g. Primera División
     opts = cfg.find_schedule_opts_for_year.call(year)
     pp opts
-    schedule = find_schedule( txt, opts )
+    rounds, schedule = find_schedule( txt, opts )
     ## pp schedule
 
     ## -- cfg.name               e.g. => 1-liga
@@ -182,9 +202,68 @@ def make_schedules( years, shortcut, repo, cfg )
     File.open( dest_path, 'w' ) do |f|
       f.write schedule
     end
+
+    stats << [cfg.dir_for_year.call(year), "#{cfg.name}.txt", rounds]
   end
 
+  stats  # return stats for reporting
 end # method make_schedules
+
+
+def make_readme( title, repo, stats )
+
+  ## sort start by season (latest first) than by name (e.g. 1-bundesliga, cup, etc.)
+  stats = stats.sort do |l,r|
+    v =  r[0] <=> l[0]
+    v =  l[1] <=> r[1]  if v == 0  ## same season
+    v
+  end
+
+  header =<<EOS
+
+# #{title}
+
+football.db RSSSF (Rec.Sport.Soccer Statistics Foundation) Archive Data for
+#{title}
+
+_Last Update: #{Time.now}_
+
+EOS
+
+  questions =<<EOS
+
+## Questions? Comments?
+
+Send them along to the
+[Open Sports & Friends Forum](http://groups.google.com/group/opensport).
+Thanks!
+EOS
+
+
+  txt = ''
+  txt << header
+  
+  txt << "| Season | League, Cup | Rounds |\n"
+  txt << "|:------ | :---------- | -----: |\n"
+
+  stats.each do |stat|
+    txt << "| #{stat[0]} "
+    txt << "| [#{stat[1]}](#{stat[0]}/#{stat[1]}) "
+    txt << "| #{stat[2]} "
+    txt << "|\n"
+  end
+
+  txt << "\n\n" 
+
+  txt << questions
+
+
+  ### save report as README.md in repo
+  dest_path = "#{repo}/README.md"
+  File.open( dest_path, 'w' ) do |f|
+    f.write txt
+  end
+end  # method make_readme
 
 
 def fetch_rsssf( dl_base, years, shortcut, repo )

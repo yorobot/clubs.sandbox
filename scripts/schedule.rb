@@ -1,16 +1,41 @@
 # encoding: utf-8
 
 
+
+LEAGUE_ROUND_REGEX = /\b
+                     Round
+                     \b/ix
+
+CUP_ROUND_REGEX  = /\b(
+                     Round         |
+                     1\/8\sFinals  |
+                     Quarterfinals |
+                     Semifinals    |
+                     Final
+                    )\b/ix
+
 def find_schedule( txt, opts={} )
 
   ## find match schedule/fixtures in multi-league doc
   new_txt = ''
+
+  ## note: keep track of statistics
+  ##   e.g. number of rounds found
+  
+  round_count = 0
 
   header = opts[:header]
   if header
     league_header_found        = false
   else
     league_header_found        = true   # default (no header; assume single league file)
+  end
+
+
+  if opts[:cup]
+    round_regex = CUP_ROUND_REGEX   ## note: only allow final, quaterfinals, etc. if knockout cup
+  else
+    round_regex = LEAGUE_ROUND_REGEX
   end
 
 
@@ -36,8 +61,9 @@ def find_schedule( txt, opts={} )
       end
     elsif first_round_header_found == false
       ## next look for first round (starting w/ Round)
-      if line =~ /Round/i
+      if line =~ round_regex
         puts "!!! bingo - found first round >#{line}<"
+        round_count += 1
         first_round_header_found = true
         round_header_found       = true
         round_body_found         = false
@@ -69,8 +95,9 @@ def find_schedule( txt, opts={} )
       ## skip (more) blank lines
       if line =~ /^\s*$/
         next  ## continue; skip extra blank line
-      elsif line =~ /Round/i
+      elsif line =~ round_regex
         puts "!!! bingo - found new round >#{line}<"
+        round_count += 1
         round_header_found = true   # more rounds; continue
         round_body_found   = false
         blank_found        = false  # reset blank tracker
@@ -91,5 +118,5 @@ def find_schedule( txt, opts={} )
     end
   end  # each line
 
-  new_txt
+  [round_count, new_txt]  # note: return number of rounds and text for schedule
 end  # method find_schedule
