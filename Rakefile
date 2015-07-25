@@ -46,6 +46,13 @@ DE      = [64, 65, 66, 67, 2011, 2012, 2013, 2014, 2015]
 DE_REPO = '../de-deutschland'
 
 
+AT_BASE = 'http://www.rsssf.com/tableso'
+AT      = [2011, 2012, 2013, 2014, 2015]
+## e.g. http://www.rsssf.com/tableso/oost2015.html 
+AT_REPO = '../at-austria'
+
+
+
 ES_BASE = 'http://www.rsssf.com/tabless'
 ES      = [2011, 2012, 2013, 2014, 2015]
 ## e.g. http://www.rsssf.com/tabless/span2013.html
@@ -95,6 +102,21 @@ task :de2 do
 
   make_schedules( DE, 'duit', DE_REPO, cfg )
 end
+
+
+task :at do
+  fetch_rsssf( AT_BASE, AT, 'oost', AT_REPO )
+end
+
+task :at2 do
+  cfg = ScheduleConfig.new
+  cfg.name = '1-bundesliga'
+  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'Bundesliga' ] }
+  cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
+
+  make_schedules( AT, 'oost', AT_REPO, cfg )
+end
+
 
 
 task :es do
