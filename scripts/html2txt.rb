@@ -54,6 +54,7 @@ def html_to_txt( html )
     puts " replace paragraph (p)"
     "\n\n"
   end
+  html = html.gsub( /<\/P>/i, '' )  ## replace paragraph (p) closing w/ nothing for now
 
   ## remove i
   html = html.gsub( /<I>([^<]+)<\/I>/im ) do |_|
