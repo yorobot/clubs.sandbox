@@ -38,6 +38,7 @@ ENG_REPO = '../eng-england'
 
 DE_BASE = 'http://www.rsssf.com/tablesd'
 DE      = [64, 65, 66, 67, 2011, 2012, 2013, 2014, 2015]
+DE_CUP  = [2011, 2012, 2013, 2014, 2015]
 ## DE = [64, 65, 66, 67]
 ## DE = [2015]
 ## e.g. http://www.rsssf.com/tablesd/duit2014.html
@@ -74,12 +75,16 @@ task :eng do
 end
 
 task :eng2 do
+  stats = []
+
   cfg = ScheduleConfig.new
   cfg.name = '1-premierleague'
   cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'Premiership|Premier League' ] }
   cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
 
-  make_schedules( ENG, 'eng', ENG_REPO, cfg )
+  stats += make_schedules( ENG, 'eng', ENG_REPO, cfg )
+
+  make_readme( 'England (and Wales)', ENG_REPO, stats )
 end
 
 
@@ -89,6 +94,8 @@ task :de do
 end
 
 task :de2 do
+  stats = []
+
   cfg = ScheduleConfig.new
   cfg.name = '1-bundesliga'
   cfg.find_schedule_opts_for_year = ->(year) {
@@ -100,7 +107,14 @@ task :de2 do
   }
   cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
 
-  make_schedules( DE, 'duit', DE_REPO, cfg )
+  stats += make_schedules( DE, 'duit', DE_REPO, cfg )
+
+  cfg.name = 'cup'
+  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'DFB Pokal', cup: true ] }
+
+  stats += make_schedules( DE_CUP, 'duit', DE_REPO, cfg )  ## note: use specific DE_CUP array
+
+  make_readme( 'Germany (Deutschland)', DE_REPO, stats )
 end
 
 
@@ -141,13 +155,17 @@ task :es do
 end
 
 task :es2 do
+  stats = []
+
   cfg = ScheduleConfig.new
   cfg.name = '1-liga'
   cfg.find_schedule_opts_for_year = ->(year) {  Hash[ header: 'Primera' ] }
   cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
   ## fix: use utf-8 e.g. Primera División
 
-  make_schedules( ES, 'span', ES_REPO, cfg )
+  stats +=  make_schedules( ES, 'span', ES_REPO, cfg )
+
+  make_readme( 'España (Spain)', ES_REPO, stats )
 end
 
 
@@ -156,6 +174,8 @@ task :br do
 end
 
 task :br2 do
+  stats = []
+
   cfg = ScheduleConfig.new
   cfg.name = '1-seriea'
   cfg.find_schedule_opts_for_year = ->(year) {  Hash[ header: 'S.rie A' ] }
@@ -163,7 +183,9 @@ task :br2 do
    ## Série A
    ## fix: utf-8 issue;  use S.rie A for now
 
-  make_schedules( BR, 'braz', BR_REPO, cfg )
+  stats += make_schedules( BR, 'braz', BR_REPO, cfg )
+
+  make_readme( 'Brazil (Brasil)', BR_REPO, stats )
 end
 
 
