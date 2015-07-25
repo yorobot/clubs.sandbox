@@ -55,11 +55,12 @@ def find_schedule( txt, header )
         puts "!!! bingo - found new round >#{line}<"
         round_header_found = true   # more rounds; continue
         new_txt << line
+      elsif line =~ /=-=-=-=/
+        puts "!!! stop schedule; hit section marker (horizontal rule)"
+        break;
       else
-        ## if we get here
-        ##   end of match schedule
-        puts "!!! stop schedule before line >#{line}<"
-        break
+        puts "skipping line in schedule >#{line}<"
+        next # continue
       end
     end
   end  # each line
