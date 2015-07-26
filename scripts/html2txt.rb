@@ -2,7 +2,8 @@
 
 require 'pp'
 require 'fetcher'
-
+require 'yaml'
+require 'uri'
 
 
 def fetch( src )
@@ -108,7 +109,51 @@ def html_to_txt( html )
      txt << "\n"
   end
 
+  ### remove emails etc.
+  txt = sanitize( txt )
+
   txt
 end # method html_to_text
 
+
+
+def sanitize( txt )
+  ### remove emails for (spam/privacy) protection
+  ## e.g. (selamm@example.es)
+  ##      (buuu@mscs.dal.ca)
+  ##      (kaxx@rsssf.com)
+  ##      (Manu_Maya@yakoo.co)
+
+  email_pattern = "\\([a-z][a-z0-9_]+@[a-z]+(\\.[a-z]+)+\\)"   ## note: just a string; needs to escape \\ twice!!!
+
+  ## check for "free-standing e.g. on its own line" emails only for now
+  txt = txt.gsub( /\n#{email_pattern}\n/i ) do |match|
+    puts "removing (free-standing) email >#{match}<"
+    "\n"   # return empty line
+  end
+
+  txt = txt.gsub( /#{email_pattern}/i ) do |match|
+    puts "remove email >#{match}<"
+    ''
+  end
+
+
+  txt  
+end # method sanitize
+
+
+def sanitize_dir( root )
+  files = Dir[ "#{root}/*.txt" ]
+
+  files.each do |file|
+    txt = File.read( file )
+    txt.force_encoding( 'ASCII-8BIT' )  ## fix: check for chars > 127 (e.g. not 7-bit)
+
+    new_txt = sanitize( txt )
+
+    File.open( file, 'w' ) do |f|
+      f.write new_txt
+    end
+  end # each file
+end  ## sanitize_dir
 

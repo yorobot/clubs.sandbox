@@ -2,7 +2,11 @@
 
 
 require './scripts/html2txt'
+require './scripts/fetch.rb'
 require './scripts/schedule'
+
+require './scripts/mkreadme'
+require './scripts/mksummary'
 
 
 YEAR_TO_SEASON =
@@ -99,6 +103,13 @@ task :eng2 do
 end
 
 
+task :engii do
+  ## sanitize_dir( "#{DE_REPO}/tables" )
+  ## rsssf_pages_stats_for_dir( "#{DE_REPO}/tables" )
+  make_summary( 'England (and Wales)', ENG_REPO )
+end
+
+
 task :debugeng do
   cfg = ScheduleConfig.new
   cfg.name = '1-premierleague'
@@ -110,9 +121,22 @@ end
 
 
 
-task :de do
+task :dexx do
   fetch_rsssf( DE_BASE, DE, 'duit', DE_REPO )
 end
+
+
+task :de do
+  fetch_rsssf_pages( DE_REPO, YAML.load_file( "#{DE_REPO}/pages.yml") )
+end
+
+task :deii do
+  ## sanitize_dir( "#{DE_REPO}/tables" )
+  ## rsssf_pages_stats_for_dir( "#{DE_REPO}/tables" )
+  make_summary( 'Germany (Deutschland)', DE_REPO )
+end
+
+
 
 task :de2 do
   stats = []
@@ -256,83 +280,4 @@ def make_schedules( years, shortcut, repo, cfg )
   stats  # return stats for reporting
 end # method make_schedules
 
-
-def make_readme( title, repo, stats )
-
-  ## sort start by season (latest first) than by name (e.g. 1-bundesliga, cup, etc.)
-  stats = stats.sort do |l,r|
-    v =  r[0] <=> l[0]
-    v =  l[1] <=> r[1]  if v == 0  ## same season
-    v
-  end
-
-  header =<<EOS
-
-# #{title}
-
-football.db RSSSF (Rec.Sport.Soccer Statistics Foundation) Archive Data for
-#{title}
-
-_Last Update: #{Time.now}_
-
-EOS
-
-  questions =<<EOS
-
-## Questions? Comments?
-
-Send them along to the
-[Open Sports & Friends Forum](http://groups.google.com/group/opensport).
-Thanks!
-EOS
-
-
-  txt = ''
-  txt << header
-  
-  txt << "| Season | League, Cup | Rounds |\n"
-  txt << "|:------ | :---------- | -----: |\n"
-
-  stats.each do |stat|
-    txt << "| #{stat[0]} "
-    txt << "| [#{stat[1]}](#{stat[0]}/#{stat[1]}) "
-    txt << "| #{stat[2]} "
-    txt << "|\n"
-  end
-
-  txt << "\n\n" 
-
-  txt << questions
-
-
-  ### save report as README.md in repo
-  dest_path = "#{repo}/README.md"
-  File.open( dest_path, 'w' ) do |f|
-    f.write txt
-  end
-end  # method make_readme
-
-
-def fetch_rsssf( dl_base, years, shortcut, repo )
-
-  years.each do |year|
-    src_url = "#{dl_base}/#{shortcut}#{year}.html"
-    html  = fetch( src_url )
-    txt   = html_to_txt( html )
-
-    header = <<EOS
-<!--
-   source: #{src_url}
-   html to text conversion on #{Time.now}
-  -->
-
-EOS
-
-    dest_path = "#{repo}/tables/#{shortcut}#{year}.txt"
-    File.open( dest_path, 'w' ) do |f|
-      f.write header
-      f.write txt
-    end
-  end # each year
-end # method fetch_rsssf
 
