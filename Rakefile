@@ -84,7 +84,28 @@ task :eng2 do
 
   stats += make_schedules( ENG, 'eng', ENG_REPO, cfg )
 
+  cfg.name = 'facup'
+  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'FA Cup', cup: true ] }
+
+  stats += make_schedules( ENG, 'eng', ENG_REPO, cfg )
+
+  cfg.name = 'leaguecup'
+  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'League Cup', cup: true ] }
+
+  stats += make_schedules( ENG, 'eng', ENG_REPO, cfg )  
+
+
   make_readme( 'England (and Wales)', ENG_REPO, stats )
+end
+
+
+task :debugeng do
+  cfg = ScheduleConfig.new
+  cfg.name = '1-premierleague'
+  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'Premiership|Premier League' ] }
+  cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
+
+  make_schedules( [2015], 'eng', ENG_REPO, cfg )
 end
 
 
@@ -159,9 +180,13 @@ task :es2 do
 
   cfg = ScheduleConfig.new
   cfg.name = '1-liga'
-  cfg.find_schedule_opts_for_year = ->(year) {  Hash[ header: 'Primera' ] }
+  cfg.find_schedule_opts_for_year = ->(year) {  Hash[ header: 'Primera' ] }   ## fix: use utf-8 e.g. Primera División
   cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
-  ## fix: use utf-8 e.g. Primera División
+
+  stats +=  make_schedules( ES, 'span', ES_REPO, cfg )
+
+  cfg.name = 'cup'
+  cfg.find_schedule_opts_for_year = ->(year) {  Hash[ header: 'Copa del Rey', cup: true ] }
 
   stats +=  make_schedules( ES, 'span', ES_REPO, cfg )
 

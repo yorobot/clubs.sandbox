@@ -9,6 +9,7 @@ LEAGUE_ROUND_REGEX = /\b
 CUP_ROUND_REGEX  = /\b(
                      Round         |
                      1\/8\sFinals  |
+                     1\/16\sFinals |
                      Quarterfinals |
                      Semifinals    |
                      Final
@@ -27,9 +28,35 @@ def find_schedule( txt, opts={} )
   header = opts[:header]
   if header
     league_header_found        = false
+
+     ## header:
+     ##  - assumes heading 4 e.g. #### Premier League or
+     ##  - bold e.g. **FA Cup** for now
+     ##  note: markers must start line (^)
+
+     ## note:
+     ## header gsub spaces to \s otherwise no match in regex (using free-form x-flag)!!!
+     header_esc   = header.gsub( ' ', '\s' )
+
+     ## note: somehow #{2,4} will not work with free-form /xi defined (picked up as comment?)
+     ##  use [#] hack ??
+     header_regex = /^
+                      ([#]{2,4}\s+(#{header_esc}))
+                        |
+                      (\*{2}(#{header_esc})\*{2})
+                    /ix
+
+    ## todo:
+    ##   use new stage_regex e.g. **xxx** - why? why not?
+    ##  allow more than one stage in one schedule (e.g. regular stage,playoff stage etc)
+
   else
     league_header_found        = true   # default (no header; assume single league file)
+    header_regex = /^---dummy---$/  ## non-matching dummy regex
   end
+
+  ## puts "header_regex:"
+  ## pp header_regex
 
 
   if opts[:cup]
@@ -47,17 +74,19 @@ def find_schedule( txt, opts={} )
   blank_found = false
 
 
+
   txt.each_line do |line|
 
     if league_header_found == false
       ## first find start of league header/section
-      ## assumes heading 4 for now
-      
-      if line =~ /####\s+(#{header})/i
+      if line =~ header_regex
         puts "!!! bingo - found header >#{line}<"
         league_header_found = true
-        new_txt << line
-        new_txt << "\n"
+        title = line.gsub( /[#*]/, '' ).strip   ##  quick hack: extract title from header
+        new_txt << "## #{title}\n\n"    # note: use header/stage title (regex group capture)
+      else
+        puts "  searching for header >#{header}<; skipping line >#{line}<"
+        next
       end
     elsif first_round_header_found == false
       ## next look for first round (starting w/ Round)
@@ -68,10 +97,14 @@ def find_schedule( txt, opts={} )
         round_header_found       = true
         round_body_found         = false
         new_txt << line
-      elsif line =~ /=-=-=-=/
+      elsif line =~ /^=-=-=-=/
         puts "*** no rounds found; hit section marker (horizontal rule)"
         break
+      elsif line =~ /^\*{2}[^*]+\*{2}/   ## e.g. **FA Cup**
+        puts "*** no rounds found; hit section/stage header: #{line}"
+        break
       else
+        puts "  searching for first round; skipping line >#{line}<"
         next ## continue; searching
       end
     elsif round_header_found == true
@@ -107,9 +140,17 @@ def find_schedule( txt, opts={} )
         round_header_found = true
         blank_found        = false  # reset blank tracker
         new_txt << line
+      elsif blank_found && line =~ /First Legs|Second Legs/i
+        puts "!!! bingo - continue round >#{line}<"
+        round_header_found = true
+        blank_found        = false  # reset blank tracker
+        new_txt << line
       elsif line =~ /=-=-=-=/
         puts "!!! stop schedule; hit section marker (horizontal rule)"
         break;
+      elsif line =~ /^\*{2}[^*]+\*{2}/   ## e.g. **FA Cup**
+        puts "!!! stop schedule; hit section/stage header: #{line}"
+        break
       else
         blank_found  = false
         puts "skipping line in schedule >#{line}<"
