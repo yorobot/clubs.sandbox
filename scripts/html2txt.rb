@@ -6,6 +6,7 @@ require 'yaml'
 require 'uri'
 
 
+
 def fetch( src )
   ## Fetcher::Worker.new.read_utf8!( src )
   Fetcher::Worker.new.read( src )  ## assume plain 7-bit ascii for now

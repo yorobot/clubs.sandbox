@@ -8,6 +8,8 @@ require './scripts/schedule'
 require './scripts/mkreadme'
 require './scripts/mksummary'
 
+require './scripts/patch'
+
 
 YEAR_TO_SEASON =
 {
@@ -127,8 +129,17 @@ end
 
 
 task :de do
-  fetch_rsssf_pages( DE_REPO, YAML.load_file( "#{DE_REPO}/pages.yml") )
+  fetch_rsssf_pages( DE_REPO, YAML.load_file( "#{DE_REPO}/tables/config.yml") )
 end
+
+
+task :deup do
+  patch_dir( "#{DE_REPO}/tables" ) do |txt, name|
+    puts "patching #{name}..."
+    patch_de( txt, name )
+  end
+end
+
 
 task :deii do
   ## sanitize_dir( "#{DE_REPO}/tables" )
