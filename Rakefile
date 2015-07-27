@@ -8,8 +8,12 @@ require './scripts/schedule'
 require './scripts/mkreadme'
 require './scripts/mksummary'
 
+require './scripts/utils'
 require './scripts/patch'
 
+
+##
+# fix/fix!!! use (new) year_to_season fn
 
 YEAR_TO_SEASON =
 {
@@ -134,9 +138,9 @@ end
 
 
 task :deup do
-  patch_dir( "#{DE_REPO}/tables" ) do |txt, name|
-    puts "patching #{name}..."
-    patch_de( txt, name )
+  patch_dir( "#{DE_REPO}/tables" ) do |txt, name, year|
+    puts "patching #{year} (#{name})..."
+    patch_de( txt, name, year )
   end
 end
 

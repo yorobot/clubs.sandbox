@@ -1,72 +1,60 @@
 # encoding: utf-8
 
 
-def year_from_name( name )
-  if name =~ /(\d+)/
-    digits = $1.to_s
-    num    = digits.to_i
 
-    if digits.size == 4   ## e.g. 1980 or 2011 etc.
-      num
-    elsif digits.size == 2  ## e.g. 00, 20 or 99 etc.
-      if num <= 16  ## assume 20xx for now from 00..16
-        2000+num
-      else               ## assume 19xx for now
-        1900+num
-      end
-    else
-      fail( "no year found in name #{name}; expected two or four digits")
+## e.g. 2008/09
+SEASON = '\d{4}\/\d{2}'  ## note: use single quotes - quotes do NOT get escaped (e.g. '\d' => "\\d")
+
+
+BUNDESLIGA2 = [
+  ## e.g. Second Level 2008/09
+  ##      2.Bundesliga
+  /^Second Level #{SEASON}\s+^2\.Bundesliga$/,
+  ## e.g. 2.Bundesliga 
+  /^2.Bundesliga$/,
+]
+
+LIGA3 = [
+  ## e.g. Third Level 2008/09
+  ##      3.Bundesliga
+  /^Third Level #{SEASON}\s+^3\.Bundesliga$/,
+]
+
+CUP = [
+  ## e.g. Germany Cup (DFB Pokal) 1998/99
+  /^Germany Cup \(DFB Pokal\) #{SEASON}$/,
+  ## e.g. DFB Pokal 2008/09
+  /^DFB Pokal #{SEASON}$/,
+]
+
+
+###
+## todo: move to patch.rb for (re)use ??
+
+def patch_heading( txt, rxs, title )
+  rxs.each do |rx|
+    txt = txt.sub( rx ) do |match|
+      match = match.gsub( "\n", '$$')  ## change newlines to $$ for single-line outputs/dumps
+      puts "  found heading >#{match}<"
+      "\n\n#### #{title}\n\n"
     end
-  else
-    fail( "no year found in name #{name}")
   end
-end  # method year_from_name
+  txt
+end
 
 
 
-def patch_de( txt, name )
+def patch_de( txt, name, year )
  
-   ## todo/fix: move into patch for (re)use for everyone!!
-   ### todo: sort files by year first (before processing!!!
-  year = year_from_name( name )
-
   if year < 2010   # note: duit2010 starts a new format w/ heading 4 sections etc.
     ##  puts "  format -- year < 2010"
-
     ## try to add section header (marker)
 
-    ## e.g. Second Level 2008/09
-    ##      2.Bundesliga
-    txt = txt.sub( /^Second Level \d{4}\/\d{2}\s+^2\.Bundesliga$/ ) do |match|
-      puts "  found heading >#{match}<"
-      "\n\n#### 2. Bundesliga\n\n"
-    end
-
-#    txt = txt.sub( /^2.Bundesliga$/ ) do |match|
-#      puts "  found heading >#{match}<"
-#      "\n\n#### 2. Bundesliga\n\n"
-#    end
-
-
-    txt = txt.sub( /^Third Level \d{4}\/\d{2}\s+^3\.Bundesliga$/ ) do |match|
-      puts "  found heading >#{match}<"
-      "\n\n#### 3. Bundesliga\n\n"
-    end
-
-    ## e.g. Germany Cup (DFB Pokal) 1998/99
-    txt = txt.sub( /^Germany Cup \(DFB Pokal\) \d{4}\/\d{2}$/ ) do |match|
-      puts "  found heading >#{match}<"
-      "\n\n#### DFB Pokal\n\n"
-    end
-
-    ## e.g. DFB Pokal 2008/09
-    txt = txt.sub( /^DFB Pokal \d{4}\/\d{2}$/ ) do |match|
-      puts "  found heading >#{match}<"
-      "\n\n#### DFB Pokal\n\n"
-    end
-
+    txt = patch_heading( txt, BUNDESLIGA2, '2. Bundesliga' )
+    txt = patch_heading( txt, LIGA3,       '3. Liga'       )
+    txt = patch_heading( txt, CUP,         'DFB Pokal'     )
   end # year < 2010
-  
+
   txt
 end # method patch_de
 
