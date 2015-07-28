@@ -1,17 +1,5 @@
 # encoding: utf-8
 
-require 'pp'
-require 'fetcher'
-require 'yaml'
-require 'uri'
-
-
-
-def fetch( src )
-  ## Fetcher::Worker.new.read_utf8!( src )
-  Fetcher::Worker.new.read( src )  ## assume plain 7-bit ascii for now
-end
-
 
 
 def html_to_txt( html )
@@ -33,27 +21,39 @@ def html_to_txt( html )
     "#{$1}"
   end
 
-  html = html.gsub( /\s*<HR>\s*/im ) do |_|
-    puts " replace horizontal rule (hr)"
+  html = html.gsub( /\s*<HR>\s*/im ) do |match|
+    match = match.gsub( "\n", '$$' )  ## make newlines visible for debugging
+    puts " replace horizontal rule (hr) - >#{match}<"
     "\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n"    ## check what hr to use use  - . - . - or =-=-=-= or somehting distinct?
   end
 
   ## replace break (br)
-  html = html.gsub( /<BR>\n?/i ) do |_|    ## note: include (swallow) "extra" newline
-    puts " replace break (br)"
+  ## note: do NOT use m/multiline for now - why? why not??
+  html = html.gsub( /<BR>\s*/i ) do |match|    ## note: include (swallow) "extra" newline
+    match = match.gsub( "\n", '$$' )  ## make newlines visible for debugging
+    puts " replace break (br) - >#{match}<"
     "\n"
+  end
+
+  ## remove anchors (a name)
+  html = html.gsub( /<A NAME[^>]*>(.+?)<\/A>/im ) do |match|   ## note: use .+? non-greedy match
+    title = $1.to_s   ## note: "save" caputure first; gets replaced by gsub (next regex call)
+    match = match.gsub( "\n", '$$' )  ## make newlines visible for debugging
+    puts " replace anchor (a) name >#{title}< - >#{match}<"
+    "#{title}"
   end
 
   ## remove anchors (a href)
   #    note: heading 4 includes anchor (thus, let anchors go first)
-  html = html.gsub( /<A[^>]*>(.+?)<\/A>/im ) do |_|   ## note: use .+? non-greedy match
-    puts " replace anchor (a) >#{$1}<"
-    "#{$1}"
+  html = html.gsub( /<A HREF[^>]*>(.+?)<\/A>/im ) do |_|   ## note: use .+? non-greedy match
+    puts " replace anchor (a) href >#{$1}<"
+    "‹#{$1}›"
   end
 
   ## replace paragrah (p)
-  html = html.gsub( /\s*<P>\s*/im ) do |_|    ## note: include (swallow) "extra" newline
-    puts " replace paragraph (p)"
+  html = html.gsub( /\s*<P>\s*/im ) do |match|    ## note: include (swallow) "extra" newline
+    match = match.gsub( "\n", '$$' )  ## make newlines visible for debugging
+    puts " replace paragraph (p) - >#{match}<"
     "\n\n"
   end
   html = html.gsub( /<\/P>/i, '' )  ## replace paragraph (p) closing w/ nothing for now

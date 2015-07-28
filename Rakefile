@@ -1,8 +1,9 @@
 # encoding: utf-8
 
 
-require './scripts/html2txt'
+
 require './scripts/fetch.rb'
+require './scripts/html2txt'
 require './scripts/schedule'
 
 require './scripts/mkreadme'

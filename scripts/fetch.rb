@@ -1,5 +1,19 @@
 # encoding: utf-8
 
+## stdlibs
+require 'pp'
+require 'yaml'
+require 'uri'
+
+## 3rd party gems/libs
+require 'fetcher'
+
+
+def fetch( src )
+  ## Fetcher::Worker.new.read_utf8!( src )
+  Fetcher::Worker.new.read( src )  ## assume plain 7-bit ascii for now
+end
+
 
 def fetch_rsssf_pages( repo, cfg )
 
@@ -38,15 +52,40 @@ end # method fetch_rsssf
 
 def fetch_rsssf_worker( src_url, dest_path )
   html  = fetch( src_url )
+
+  ### todo/fix: first check if html is all ascii-7bit e.g.
+  ## includes only chars from 64 to 127!!!
+
+
+  ## normalize newlines
+  ##   remove \r (form feed) used by Windows; just use \n (new line)
+  html = html.gsub( "\r", '' )
+
+  ## note:
+  ##   assume (default) to ISO 3166-15 (an updated version of ISO 3166-1) for now
+  ##
+  ##  other possible alternatives - try:
+  ##  - Windows CP 1562  or
+  ##  - ISO 3166-2  (for eastern european languages )
+  ##
+  ## note: german umlaut use the same code (int)
+  ##    in ISO 3166-1/15 and 2 and Windows CP1562  (other chars ARE different!!!)
+
+  html = html.force_encoding( Encoding::ISO_8859_15 )
+  html = html.encode( Encoding::UTF_8 )    # try conversion to utf-8
+
   txt   = html_to_txt( html )
 
   header = <<EOS
 <!--
    source: #{src_url}
-   html to text conversion on #{Time.now}
   -->
 
 EOS
+
+## note: move timestamp out for now (to let git track changes; do NOT introduce "noise")
+##  e.g. html to text conversion on #{Time.now}
+
 
   File.open( dest_path, 'w' ) do |f|
     f.write header
