@@ -115,10 +115,23 @@ task :importde => :importbuiltin do
   r.read
 
   ## read in event configs (no fixtures)
-  ['2015-16', '2014-15'].each do |season|
+  ['2015-16', '2014-15', '2013-14'].each do |season|
     r = SportDb::EventReader.from_file( "#{DE_INCLUDE_PATH}/#{season}/1-bundesliga.yml" )
     r.read  
-  end  
+  end
+  
+  ## last but not least read rsssf files (from rsssf repo)
+  ['2014-15', '2013-14'].each do |season|
+    ## note: rsssf text read in as iso-8859-15 for now (fix: convert in importer to utf-8!!)
+    txt = File.open( "../de-deutschland/#{season}/1-bundesliga.txt", "r:iso-8859-15" ).read
+    txt = txt.encode( "utf-8" )
+    
+    pp txt
+    event_key = "de.#{season.tr('-','/')}"    ## e.g. 2014-15 => de.2014/15
+    r = SportDb::RsssfGameReader.from_string( event_key, txt )
+    r.read
+  end
+
 end
 
 
