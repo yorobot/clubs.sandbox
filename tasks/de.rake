@@ -25,11 +25,15 @@ task :deup do
   end
 end
 
+task :deiib do
+  ## note: sanitize is part of html2txt (gets called at the end)
+  ##  use deiib for testing/debugging/development/etc.
+  sanitize_dir( "#{DE_REPO}/tables" )
+end
+
 
 task :deii do
-  ## sanitize_dir( "#{DE_REPO}/tables" )
-  ## rsssf_pages_stats_for_dir( "#{DE_REPO}/tables" )
-  make_summary( 'Germany (Deutschland)', DE_REPO )
+  make_rsssf_pages_summary( 'Germany (Deutschland)', DE_REPO )
 end
 
 

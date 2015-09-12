@@ -17,8 +17,8 @@ def patch_dir( root )
   end
 
   files.each do |file|
-    txt = File.read( file )
-    txt.force_encoding( 'ASCII-8BIT' )  ## fix: check for chars > 127 (e.g. not 7-bit)
+    txt = File.read_utf8( file )
+    ## was: txt.force_encoding( 'ASCII-8BIT' )  ## fix: check for chars > 127 (e.g. not 7-bit)
 
     basename = File.basename( file, '.txt' )  ## e.g. duit92.txt => duit92
     year     = year_from_name( basename )

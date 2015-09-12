@@ -65,7 +65,10 @@ def fetch_rsssf_worker( src_url, dest_path )
   html = html.encode( Encoding::UTF_8 )    # try conversion to utf-8
 
   ## check for html entities
+  html = html.gsub( "&auml;", 'ä' )
+  html = html.gsub( "&ouml;", 'ö' )
   html = html.gsub( "&uuml;", 'ü' )
+  html = html.gsub( "&szlig;", 'ß' )
   ## todo/fix: add more entities
 
   txt   = html_to_txt( html )

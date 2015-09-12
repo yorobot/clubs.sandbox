@@ -1,6 +1,17 @@
 # encoding: utf-8
 
 
+RsssfPageStat = Struct.new(
+  :source,     ## e.g. http://rsssf.org/tabled/duit89.html
+  :basename,   ## e.g. duit89   -- note: filename w/o extension (and path)
+  :year,       ## e.g. 1989     -- note: always four digits
+  :authors,
+  :last_updated,
+  :line_count,  ## todo: rename to (just) lines - why? why not?
+  :char_count,  ## todo: rename to (just) char(ectar)s  - why? why not?
+  :sections)
+
+
 def rsssf_pages_stats_for_dir( root )
   ## assume all text files are converted rsssf table pages
 
@@ -9,9 +20,9 @@ def rsssf_pages_stats_for_dir( root )
   files = Dir[ "#{root}/*.txt" ]
 
   files.each do |file|
-    txt = File.read( file )
-    txt.force_encoding( 'ASCII-8BIT' )  ## fix: check for chars > 127 (e.g. not 7-bit)
-
+    txt = File.read_utf8( file )    # note: always assume sources (already) converted to utf-8 
+    ## was: txt.force_encoding( 'ASCII-8BIT' )  ## fix: check for chars > 127 (e.g. not 7-bit)
+    
     source       = nil
     authors      = nil
     last_updated = nil
@@ -48,8 +59,27 @@ def rsssf_pages_stats_for_dir( root )
       end
     end
 
-    stats << [source, authors, last_updated, line_count, txt.size, sections ]
 
+    # get path from url
+    url  = URI.parse( source )
+    ## pp url
+    ## puts url.host
+    path = url.path
+    extname  = File.extname( path )
+    basename = File.basename( path, extname )  ## e.g. duit92.txt or duit92.html => duit92
+    year     = year_from_name( basename )
+
+    rec = RsssfPageStat.new
+    rec.source       = source         # e.g. http://rsssf.org/tabled/duit89.html   -- use source_url - why?? why not??
+    rec.basename     = basename       # e.g. duit89
+    rec.year         = year           # e.g. 89 => 1989  -- note: always four digits
+    rec.authors      = authors
+    rec.last_updated = last_updated
+    rec.line_count   = line_count
+    rec.char_count   = txt.size      ## fix: use "true" char count not byte count
+    rec.sections     = sections
+
+    stats << rec
   end # each file
   
   stats  # return collected stats
@@ -57,15 +87,11 @@ end  # method rsssf_pages_stats
 
 
 
-def make_summary( title, repo )
+def make_rsssf_pages_summary( title, repo )
   stats = rsssf_pages_stats_for_dir( "#{repo}/tables" )
 
-  ## fix: add missing 19/20 if two digits for proper sorting??
-  ## sort start by season (latest first) than by name (e.g. 1-bundesliga, cup, etc.)
   stats = stats.sort do |l,r|
-    v =  r[0] <=> l[0]
-    v =  l[1] <=> r[1]  if v == 0  ## same season
-    v
+    r.year <=> l.year
   end
 
 
@@ -87,18 +113,11 @@ EOS
 
   stats.each do |stat|
 
-    # get path from url
-    url  = URI.parse( stat[0] )
-    ## pp url
-    ## puts url.host
-    path = url.path
-    basename = File.basename( path, '.html')
-
-    txt << "| [#{basename}.txt](#{basename}.txt) "
-    txt << "| #{stat[1]} "
-    txt << "| #{stat[2]} "
-    txt << "| #{stat[3]} (#{stat[4]}) "
-    txt << "| #{stat[5].join(', ')} "
+    txt << "| [#{stat.basename}.txt](#{stat.basename}.txt) "
+    txt << "| #{stat.authors} "
+    txt << "| #{stat.last_updated} "
+    txt << "| #{stat.line_count} (#{stat.char_count}) "
+    txt << "| #{stat.sections.join(', ')} "
     txt << "|\n"
   end
 

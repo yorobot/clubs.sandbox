@@ -45,7 +45,8 @@ def html_to_txt( html )
 
   ## remove anchors (a href)
   #    note: heading 4 includes anchor (thus, let anchors go first)
-  html = html.gsub( /<A HREF[^>]*>(.+?)<\/A>/im ) do |_|   ## note: use .+? non-greedy match
+  #  note: <a \newline href is used for authors email - thus incl. support for newline as space
+  html = html.gsub( /<A\s+HREF[^>]*>(.+?)<\/A>/im ) do |_|   ## note: use .+? non-greedy match
     puts " replace anchor (a) href >#{$1}<"
     "‹#{$1}›"
   end
@@ -101,6 +102,8 @@ def html_to_txt( html )
 
 
   ## cleanup whitespaces
+  ##   todo/fix:  convert newline in space first
+  ##                and than collapse spaces etc.!!!
   txt = ''
   html.each_line do |line|
      line = line.gsub( "\t", '  ' ) # replace all tabs w/ two spaces for nwo
@@ -125,7 +128,10 @@ def sanitize( txt )
   ##      (kaxx@rsssf.com)
   ##      (Manu_Maya@yakoo.co)
 
-  email_pattern = "\\([a-z][a-z0-9_]+@[a-z]+(\\.[a-z]+)+\\)"   ## note: just a string; needs to escape \\ twice!!!
+  ##   note add support for optional ‹› enclosure (used by html2txt converted a href :mailto links)
+  ##   e.g. (‹selamm@example.es›)
+
+  email_pattern = "\\(‹?[a-z][a-z0-9_]+@[a-z]+(\\.[a-z]+)+›?\\)"   ## note: just a string; needs to escape \\ twice!!!
 
   ## check for "free-standing e.g. on its own line" emails only for now
   txt = txt.gsub( /\n#{email_pattern}\n/i ) do |match|
@@ -147,8 +153,8 @@ def sanitize_dir( root )
   files = Dir[ "#{root}/*.txt" ]
 
   files.each do |file|
-    txt = File.read( file )
-    txt.force_encoding( 'ASCII-8BIT' )  ## fix: check for chars > 127 (e.g. not 7-bit)
+    txt = File.read_utf8( file )
+    ## was: txt.force_encoding( 'ASCII-8BIT' )  ## fix: check for chars > 127 (e.g. not 7-bit)
 
     new_txt = sanitize( txt )
 
