@@ -11,7 +11,10 @@ require 'fetcher'
 
 def fetch( src )
   ## Fetcher::Worker.new.read_utf8!( src )
-  Fetcher::Worker.new.read( src )  ## assume plain 7-bit ascii for now
+
+  ## assume plain 7-bit ascii for now
+  ##  -- assume rsssf uses ISO_8859_15 (updated version of ISO_8859_1) -- does NOT use utf-8 character encoding!!!
+  Fetcher::Worker.new.read( src )  
 end
 
 
@@ -38,24 +41,11 @@ def fetch_rsssf_pages( repo, cfg )
 end # method fetch_rsssf
 
 
-def fetch_rsssf( dl_base, years, shortcut, repo )
-
-  years.each do |year|
-    src_url   = "#{dl_base}/#{shortcut}#{year}.html"
-    dest_path = "#{repo}/tables/#{shortcut}#{year}.txt"
-    
-    fetch_rsssf_worker( src_url, dest_path )
-  end # each year
-end # method fetch_rsssf
-
-
-
 def fetch_rsssf_worker( src_url, dest_path )
   html  = fetch( src_url )
 
   ### todo/fix: first check if html is all ascii-7bit e.g.
   ## includes only chars from 64 to 127!!!
-
 
   ## normalize newlines
   ##   remove \r (form feed) used by Windows; just use \n (new line)
@@ -73,6 +63,10 @@ def fetch_rsssf_worker( src_url, dest_path )
 
   html = html.force_encoding( Encoding::ISO_8859_15 )
   html = html.encode( Encoding::UTF_8 )    # try conversion to utf-8
+
+  ## check for html entities
+  html = html.gsub( "&uuml;", 'ü' )
+  ## todo/fix: add more entities
 
   txt   = html_to_txt( html )
 
