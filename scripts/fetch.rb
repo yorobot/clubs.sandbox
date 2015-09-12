@@ -68,8 +68,24 @@ def fetch_rsssf_worker( src_url, dest_path )
   html = html.gsub( "&auml;", 'ä' )
   html = html.gsub( "&ouml;", 'ö' )
   html = html.gsub( "&uuml;", 'ü' )
+  html = html.gsub( "&Auml;", 'Ä' )
+  html = html.gsub( "&Ouml;", 'Ö' )
+  html = html.gsub( "&Uuml;", 'Ü' )
   html = html.gsub( "&szlig;", 'ß' )
+
+  html = html.gsub( "&oulm;", 'ö' )    ## support typo in entity (&ouml;)
+  html = html.gsub( "&slig;", "ß" )    ## support typo in entity (&szlig;)
+  
+  html = html.gsub( "&Eacute;", 'É' )
+  html = html.gsub( "&oslash;", 'ø' )
+  
+  ## check for more entities
+  html = html.gsub( /&[^;]+;/) do |match|
+    puts "*** found unencoded html entity #{match}"
+    match   ## pass through as is (1:1)
+  end
   ## todo/fix: add more entities
+
 
   txt   = html_to_txt( html )
 

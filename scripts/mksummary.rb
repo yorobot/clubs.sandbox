@@ -5,6 +5,7 @@ RsssfPageStat = Struct.new(
   :source,     ## e.g. http://rsssf.org/tabled/duit89.html
   :basename,   ## e.g. duit89   -- note: filename w/o extension (and path)
   :year,       ## e.g. 1989     -- note: always four digits
+  :season,     ## e.g. 1990-91  -- note: always a string (NOT a number)
   :authors,
   :last_updated,
   :line_count,  ## todo: rename to (just) lines - why? why not?
@@ -32,6 +33,10 @@ def rsssf_pages_stats_for_dir( root )
       source = $1.to_s
       puts "source: >#{source}<"
     end
+
+
+    ##
+    ## fix/todo: move authors n last updated  whitespace cleanup to sanitize - why? why not?? 
 
     if txt =~ /authors?:\s+(.+?)\s+last updated:\s+(\d{1,2} [a-z]{3,10} \d{4})/im
       last_updated = $2.to_s   # note: save a copy first (gets "reset" by next regex)
@@ -68,11 +73,13 @@ def rsssf_pages_stats_for_dir( root )
     extname  = File.extname( path )
     basename = File.basename( path, extname )  ## e.g. duit92.txt or duit92.html => duit92
     year     = year_from_name( basename )
+    season   = year_to_season( year )
 
     rec = RsssfPageStat.new
     rec.source       = source         # e.g. http://rsssf.org/tabled/duit89.html   -- use source_url - why?? why not??
     rec.basename     = basename       # e.g. duit89
     rec.year         = year           # e.g. 89 => 1989  -- note: always four digits
+    rec.season       = season
     rec.authors      = authors
     rec.last_updated = last_updated
     rec.line_count   = line_count
@@ -107,12 +114,12 @@ EOS
 
   txt = ''
   txt << header
-  
-  txt << "| File   | Authors  | Last Updated | Lines (Chars) | Sections | \n"
-  txt << "|:------ | :------- | :----------- | ------------: | :------- |\n"
+
+  txt << "| Season | File   | Authors  | Last Updated | Lines (Chars) | Sections |\n"
+  txt << "| :----- | :----- | :------- | :----------- | ------------: | :------- |\n"
 
   stats.each do |stat|
-
+    txt << "| #{stat.season} "
     txt << "| [#{stat.basename}.txt](#{stat.basename}.txt) "
     txt << "| #{stat.authors} "
     txt << "| #{stat.last_updated} "
