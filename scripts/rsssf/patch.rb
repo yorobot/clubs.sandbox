@@ -1,7 +1,5 @@
 # encoding: utf-8
 
-require_relative 'de/patch'
-
 
 
 def patch_dir( root )

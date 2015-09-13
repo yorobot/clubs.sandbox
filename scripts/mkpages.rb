@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# script to generate pages.yml starter template
+# script to generate config.yml/pages.yml starter template
 
 
 start_year = 1963

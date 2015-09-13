@@ -1,5 +1,13 @@
 # encoding: utf-8
 
+
+BR_BASE = 'http://www.rsssf.com/tablesb'
+BR      = [2011, 2012, 2013, 2014, 2015]   ## note: no season 
+## e.g. http://www.rsssf.com/tablesb/braz2012.html
+
+BR_REPO = '../br-brazil'
+
+
 task :br do
   fetch_rsssf( BR_BASE, BR, 'braz', BR_REPO )
 end

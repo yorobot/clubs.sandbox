@@ -1,48 +1,17 @@
 # encoding: utf-8
 
-## stdlibs
-require 'pp'
-require 'yaml'
-require 'uri'
 
-## 3rd party gems/libs
-require 'fetcher'
-
-
-def fetch( src )
-  ## Fetcher::Worker.new.read_utf8!( src )
-
-  ## assume plain 7-bit ascii for now
-  ##  -- assume rsssf uses ISO_8859_15 (updated version of ISO_8859_1) -- does NOT use utf-8 character encoding!!!
-  Fetcher::Worker.new.read( src )  
+class RsssfPageFetcher
+  
+def initialize
+  @worker = Fetcher::Worker.new
 end
+  
+def fetch( src_url )
 
-
-def fetch_rsssf_pages( repo, cfg )
-
-  puts "fetch_rsssf_pages:"
-  pp cfg
-
-  dl_base = 'http://rsssf.com'
-
-  cfg.each do |k,v|
-    ## season = k   # as string e.g. 2011-12  or 2011 etc.
-    path      = v  # as string e.g. tablesd/duit2011.html
-
-    ## note: assumes extension is .html
-    #    e.g. tablesd/duit2011.html => duit2011
-    basename = File.basename( path, '.html' )
-
-    src_url   = "#{dl_base}/#{path}"
-    dest_path = "#{repo}/tables/#{basename}.txt"
-
-    fetch_rsssf_worker( src_url, dest_path )
-  end # each year
-end # method fetch_rsssf
-
-
-def fetch_rsssf_worker( src_url, dest_path )
-  html  = fetch( src_url )
+  ## note: assume plain 7-bit ascii for now
+  ##  -- assume rsssf uses ISO_8859_15 (updated version of ISO_8859_1) -- does NOT use utf-8 character encoding!!!
+  html = @worker.read( src_url )  
 
   ### todo/fix: first check if html is all ascii-7bit e.g.
   ## includes only chars from 64 to 127!!!
@@ -96,12 +65,8 @@ def fetch_rsssf_worker( src_url, dest_path )
 
 EOS
 
-## note: move timestamp out for now (to let git track changes; do NOT introduce "noise")
-##  e.g. html to text conversion on #{Time.now}
+  header+txt  ## return txt w/ header
+end  ## method fetch
 
+end  ## class RsssfPageFetcher
 
-  File.open( dest_path, 'w' ) do |f|
-    f.write header
-    f.write txt
-  end
-end

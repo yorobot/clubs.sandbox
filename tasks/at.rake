@@ -1,12 +1,19 @@
 # encoding: utf-8
 
 
-AT_REPO  = '../at-austria'
-AT_TITLE = 'Austria (Österreich)'
+AT_REPO_PATH  = '../at-austria'
+AT_TITLE      = 'Austria (Österreich)'
+
+AT_REPO = RsssfRepo.new( AT_REPO_PATH, title: AT_TITLE )
+
 
 
 task :at do
-  fetch_rsssf_pages( AT_REPO, YAML.load_file( "#{AT_REPO}/tables/config.yml") )
+  AT_REPO.fetch_pages
+end
+
+task :atii do
+  AT_REPO.make_pages_summary
 end
 
 
@@ -19,11 +26,6 @@ task :atup do
 end
 
 
-task :atii do
-  make_rsssf_pages_summary( AT_TITLE, AT_REPO )
-end
-
-
 
 
 task :at2 do
@@ -31,27 +33,28 @@ task :at2 do
 
   cfg = RsssfScheduleConfig.new
   cfg.name = '1-bundesliga'
-  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'Bundesliga' ] }  ## fix: check opt - allow hash or proc (simplify)!!!
-  cfg.dir_for_year                = ->(year) { archive_dir_for_year(year) }   ## fix: make it default if not set!!!
+  cfg.find_schedule_opts_for_year = { header: 'Bundesliga' }
 
   stats += make_schedules( AT_REPO, cfg )
 
 
   cfg.name = 'cup'
-  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'ÖFB Cup', cup: true ] }
+  cfg.find_schedule_opts_for_year = { header: 'ÖFB Cup', cup: true }
 
   stats += make_schedules( AT_REPO, cfg )
 
-  make_readme( AT_TITLE, AT_REPO, stats )
+
+  report = RsssfScheduleReport.new( stats, title: AT_TITLE )
+  report.save( "#{AT_REPO}/README.md" )
 end
 
 
 task :debugat do
   cfg = RsssfScheduleConfig.new
   cfg.name = 'cup'
-  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'ÖFB Cup', cup: true ] }
-  cfg.dir_for_year = ->(year) { archive_dir_for_year(year) }
+  cfg.find_schedule_opts_for_year = { header: 'ÖFB Cup', cup: true }
   cfg.includes = [2013]
+
   make_schedules( AT_REPO, cfg )
 end
 

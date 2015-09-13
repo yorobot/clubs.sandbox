@@ -1,10 +1,27 @@
 # encoding: utf-8
 
 
-def make_readme( title, repo, stats )
+class RsssfScheduleReport
 
+attr_reader :title
+
+def initialize( stats, opts )
+  @stats = stats
+  @opts  = opts
+    
+  @title = opts[:title] || 'Your Title Here' 
+end
+
+def save( path )
+  ### save report as README.md in repo
+  File.open( path, 'w' ) do |f|
+    f.write build_summary
+  end
+end
+
+def build_summary
   ## sort start by season (latest first) than by name (e.g. 1-bundesliga, cup, etc.)
-  stats = stats.sort do |l,r|
+  stats = @stats.sort do |l,r|
     v =  r.season   <=> l.season
     v =  l.filename <=> r.filename  if v == 0  ## same season
     v
@@ -21,6 +38,7 @@ _Last Update: #{Time.now}_
 
 EOS
 
+
   footer =<<EOS
 
 ## Questions? Comments?
@@ -35,7 +53,7 @@ EOS
   txt << header
   
   txt << "| Season | League, Cup | Rounds |\n"
-  txt << "|:------ | :---------- | -----: |\n"
+  txt << "| :----- | :---------- | -----: |\n"
 
   stats.each do |stat|
     txt << "| #{stat.season} "
@@ -47,11 +65,8 @@ EOS
   txt << "\n\n" 
 
   txt << footer
+  txt
+end  # method build_summary
 
+end  ## class RsssfScheduleReport
 
-  ### save report as README.md in repo
-  dest_path = "#{repo}/README.md"
-  File.open( dest_path, 'w' ) do |f|
-    f.write txt
-  end
-end  # method make_readme
