@@ -5,8 +5,8 @@ def make_readme( title, repo, stats )
 
   ## sort start by season (latest first) than by name (e.g. 1-bundesliga, cup, etc.)
   stats = stats.sort do |l,r|
-    v =  r[0] <=> l[0]
-    v =  l[1] <=> r[1]  if v == 0  ## same season
+    v =  r.season   <=> l.season
+    v =  l.filename <=> r.filename  if v == 0  ## same season
     v
   end
 
@@ -21,7 +21,7 @@ _Last Update: #{Time.now}_
 
 EOS
 
-  questions =<<EOS
+  footer =<<EOS
 
 ## Questions? Comments?
 
@@ -38,15 +38,15 @@ EOS
   txt << "|:------ | :---------- | -----: |\n"
 
   stats.each do |stat|
-    txt << "| #{stat[0]} "
-    txt << "| [#{stat[1]}](#{stat[0]}/#{stat[1]}) "
-    txt << "| #{stat[2]} "
+    txt << "| #{stat.season} "
+    txt << "| [#{stat.filename}](#{stat.path}/#{stat.filename}) "
+    txt << "| #{stat.rounds} "
     txt << "|\n"
   end
 
   txt << "\n\n" 
 
-  txt << questions
+  txt << footer
 
 
   ### save report as README.md in repo

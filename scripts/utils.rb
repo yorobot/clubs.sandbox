@@ -51,6 +51,22 @@ def year_to_season( year )
 end
 
 
+def archive_dir_for_year( year )
+  season = year_to_season( year )
+  if year <= 2010   # e.g. season 2009-10
+    ## use archive folder (w/ 1980s etc)
+    ## get decade folder
+    decade  = year-1
+    decade -= decade % 10   ## turn 1987 into 1980 etc
+    "archive/#{decade}s/#{season}"
+  else
+    season 
+  end
+end
+
+
+
+
 ####
 # for testing run
 #  $ ruby ./scripts/utils.rb

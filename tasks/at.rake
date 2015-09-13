@@ -1,34 +1,58 @@
 # encoding: utf-8
 
+
+AT_REPO  = '../at-austria'
+AT_TITLE = 'Austria (Österreich)'
+
+
 task :at do
-  fetch_rsssf( AT_BASE, AT, 'oost', AT_REPO )
+  fetch_rsssf_pages( AT_REPO, YAML.load_file( "#{AT_REPO}/tables/config.yml") )
 end
+
+
+task :atup do
+  patch_dir( "#{AT_REPO}/tables" ) do |txt, name, year|
+    puts "patching #{year} (#{name})..."
+    ## to be done
+    ## patch_at( txt, name, year )
+  end
+end
+
+
+task :atii do
+  make_rsssf_pages_summary( AT_TITLE, AT_REPO )
+end
+
+
+
 
 task :at2 do
   stats = []
 
-  cfg = ScheduleConfig.new
+  cfg = RsssfScheduleConfig.new
   cfg.name = '1-bundesliga'
-  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'Bundesliga' ] }
-  cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
+  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'Bundesliga' ] }  ## fix: check opt - allow hash or proc (simplify)!!!
+  cfg.dir_for_year                = ->(year) { archive_dir_for_year(year) }   ## fix: make it default if not set!!!
 
-  stats += make_schedules( AT, 'oost', AT_REPO, cfg )
+  stats += make_schedules( AT_REPO, cfg )
+
 
   cfg.name = 'cup'
-  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: '.FB Cup', cup: true ] }  ## fix: utf8- for ÖFB Cup
+  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'ÖFB Cup', cup: true ] }
 
-  stats += make_schedules( AT, 'oost', AT_REPO, cfg )
+  stats += make_schedules( AT_REPO, cfg )
 
-  make_readme( 'Austria (Österreich)', AT_REPO, stats )
+  make_readme( AT_TITLE, AT_REPO, stats )
 end
 
-task :debugat do
-  cfg = ScheduleConfig.new
-  cfg.name = 'cup'
-  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: '.FB Cup', cup: true ] }  ## fix: utf8- for ÖFB Cup
-  cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
 
-  make_schedules( [2013], 'oost', AT_REPO, cfg )
+task :debugat do
+  cfg = RsssfScheduleConfig.new
+  cfg.name = 'cup'
+  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'ÖFB Cup', cup: true ] }
+  cfg.dir_for_year = ->(year) { archive_dir_for_year(year) }
+  cfg.includes = [2013]
+  make_schedules( AT_REPO, cfg )
 end
 
 

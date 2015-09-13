@@ -1,15 +1,8 @@
 # encoding: utf-8
 
 
-DE_BASE = 'http://www.rsssf.com/tablesd'
-DE      = [64, 65, 66, 67, 2011, 2012, 2013, 2014, 2015]
-DE_CUP  = [2011, 2012, 2013, 2014, 2015]
-## DE = [64, 65, 66, 67]
-## DE = [2015]
-## e.g. http://www.rsssf.com/tablesd/duit2014.html
-##      http://www.rsssf.com/tablesd/duit64.html
-
-DE_REPO = '../de-deutschland'
+DE_REPO  = '../de-deutschland'
+DE_TITLE = 'Germany (Deutschland)'
 
 
 
@@ -33,33 +26,41 @@ end
 
 
 task :deii do
-  make_rsssf_pages_summary( 'Germany (Deutschland)', DE_REPO )
+  make_rsssf_pages_summary( DE_TITLE, DE_REPO )
 end
+
 
 
 
 task :de2 do
   stats = []
 
-  cfg = ScheduleConfig.new
+  cfg = RsssfScheduleConfig.new
   cfg.name = '1-bundesliga'
   cfg.find_schedule_opts_for_year = ->(year) {
-    if year < 100
-      Hash[]  # no header; assume single league file
+    if year <= 1999
+      {}  # no header; assume single league file; return empty hash
     else
-      Hash[ header: '1\. Bundesliga' ]
+      { header: '1\. Bundesliga' }
     end
   }
-  cfg.dir_for_year = ->(year) { YEAR_TO_SEASON[year] }
+  cfg.dir_for_year = ->(year) { archive_dir_for_year(year) }
 
-  stats += make_schedules( DE, 'duit', DE_REPO, cfg )
+  ## for debugging - use filer (to process only some files)
+  ## cfg.includes = [1964, 1965, 1971, 1972, 2014, 2015]
+
+  stats += make_schedules( DE_REPO, cfg )
+
 
   cfg.name = 'cup'
-  cfg.find_schedule_opts_for_year = ->(year) { Hash[ header: 'DFB Pokal', cup: true ] }
+  cfg.find_schedule_opts_for_year = ->(year) {  Hash[ header: 'DFB Pokal', cup: true ] }
 
-  stats += make_schedules( DE_CUP, 'duit', DE_REPO, cfg )  ## note: use specific DE_CUP array
+  ## for debugging - use filer (to process only some files)
+  cfg.includes = (1997..2015).to_a
 
-  make_readme( 'Germany (Deutschland)', DE_REPO, stats )
+  stats += make_schedules( DE_REPO, cfg )  ## note: use specific DE_CUP array
+
+  make_readme( DE_TITLE, DE_REPO, stats )
 end
 
 
