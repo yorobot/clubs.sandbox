@@ -267,7 +267,7 @@ def build_stat
   rec.authors      = authors
   rec.last_updated = last_updated
   rec.line_count   = line_count
-  rec.char_count   = txt.size      ## fix: use "true" char count not byte count
+  rec.char_count   = @txt.size      ## fix: use "true" char count not byte count
   rec.sections     = sections  
 
   rec
