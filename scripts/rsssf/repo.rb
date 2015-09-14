@@ -71,6 +71,12 @@ def make_pages_summary
 end  # method make_pages_summary  
 
 
+def make_schedules_summary( stats )   ## note: requires stats to be passed in for now
+  report = ScheduleReport.new( stats, @opts )   ## pass in title etc.
+  report.save( "#{@repo_path}/README.md" )
+end  # method make_schedules_summary
+
+
 
 def patch_pages( patcher )
   ## lets you run/use custom (repo/country-specific patches e.g. for adding/patching headings etc.)

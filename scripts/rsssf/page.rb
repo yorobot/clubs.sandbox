@@ -26,6 +26,8 @@ module Rsssf
 
 class Page
 
+  include Utils   ## e.g. year_from_name, etc.
+
 def self.from_url( src )
   txt = PageFetcher.new.fetch( src )
   self.from_string( txt )

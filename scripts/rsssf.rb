@@ -10,12 +10,13 @@ require 'fetcher'
 
 
 ## our own code
+require './scripts/rsssf/utils'      # include Utils - goes first
+require './scripts/rsssf/html2txt'   # include Filters - goes first
+
 require './scripts/rsssf/fetch'
-require './scripts/rsssf/html2txt'
 require './scripts/rsssf/page'
 require './scripts/rsssf/schedule'
 require './scripts/rsssf/patch'
-require './scripts/rsssf/utils'
 
 require './scripts/rsssf/reports/schedule'
 require './scripts/rsssf/reports/page'

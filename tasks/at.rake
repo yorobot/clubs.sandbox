@@ -7,55 +7,53 @@ AT_TITLE      = 'Austria (Österreich)'
 AT_REPO = RsssfRepo.new( AT_REPO_PATH, title: AT_TITLE )
 
 
+task :at => [:ati,:atii,:atiii] do
+end
 
-task :at do
+
+task :ati do
   AT_REPO.fetch_pages
 end
 
 task :atii do
+  ## AT_REPO.patch_pages( patcher )
+end
+
+task :atiii do
   AT_REPO.make_pages_summary
 end
 
 
-task :atup do
-  AT_REPO.patch_pages do |txt, name, year|
-    ## to be done
-    ## patch_at( txt, name, year )
-    txt     ## note: must return t(e)xt
-  end
-end
 
 
 
-
-task :at2 do
+task :atv do
   stats = []
 
   cfg = RsssfScheduleConfig.new
   cfg.name = '1-bundesliga'
-  cfg.find_schedule_opts_for_year = { header: 'Bundesliga' }
+  cfg.opts_for_year = { header: 'Bundesliga' }
 
-  stats += make_schedules( AT_REPO, cfg )
+  stats += AT_REPO.make_schedules( cfg )
 
 
   cfg.name = 'cup'
-  cfg.find_schedule_opts_for_year = { header: 'ÖFB Cup', cup: true }
+  cfg.opts_for_year = { header: 'ÖFB Cup', cup: true }
 
-  stats += make_schedules( AT_REPO, cfg )
+  stats += AT_REPO.make_schedules( cfg )
 
 
-  report = RsssfScheduleReport.new( stats, title: AT_TITLE )
-  report.save( "#{AT_REPO}/README.md" )
+  AT_REPO.make_schedules_summary( stats )   ## e.g. update README.md
 end
 
 
 task :debugat do
   cfg = RsssfScheduleConfig.new
   cfg.name = 'cup'
-  cfg.find_schedule_opts_for_year = { header: 'ÖFB Cup', cup: true }
+  cfg.opts_for_year = { header: 'ÖFB Cup', cup: true }
   cfg.includes = [2013]
 
-  make_schedules( AT_REPO, cfg )
+  AT_REPO.make_schedules( cfg )
 end
 
 
