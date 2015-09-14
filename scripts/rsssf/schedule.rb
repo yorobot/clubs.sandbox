@@ -1,7 +1,8 @@
 # encoding: utf-8
 
+module Rsssf
 
-class RsssfSchedule
+class Schedule
 
 def self.from_string( txt )
   self.new( txt )
@@ -22,6 +23,9 @@ def save( path )
   end    
 end
 
-end  ## class RsssfSchedule
+end  ## class Schedule
+end  ## module Rsssf
 
+## add (shortcut) alias
+RsssfSchedule = Rsssf::Schedule
 

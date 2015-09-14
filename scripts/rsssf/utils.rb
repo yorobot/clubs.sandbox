@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+module Rsssf
+module Utils
 
 def year_from_file( path )
   extname  = File.extname( path )
@@ -65,6 +67,12 @@ def archive_dir_for_year( year )
 end
 
 
+end  # module Utils
+end  # module Rsssf
+
+## add (shortcut) alias
+RsssfUtils = Rsssf::Utils
+
 
 
 ####
@@ -72,7 +80,10 @@ end
 #  $ ruby ./scripts/utils.rb
 
 
+
+## fix: move to unit tests!!!
 if __FILE__ == $0
+  
   puts year_to_season( 0 )
   puts year_to_season( 64 )
   puts year_to_season( 99 )

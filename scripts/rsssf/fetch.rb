@@ -1,8 +1,12 @@
 # encoding: utf-8
 
+module Rsssf
 
-class RsssfPageFetcher
-  
+class PageFetcher
+
+  include Filters   # e.g. html2text, sanitize etc.
+
+
 def initialize
   @worker = Fetcher::Worker.new
 end
@@ -68,5 +72,9 @@ EOS
   header+txt  ## return txt w/ header
 end  ## method fetch
 
-end  ## class RsssfPageFetcher
+end  ## class PageFetcher
+end  ## module Rsssf
+
+## add (shortcut) alias
+RsssfPageFetcher = Rsssf::PageFetcher
 

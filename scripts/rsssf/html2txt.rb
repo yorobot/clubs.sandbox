@@ -1,6 +1,7 @@
 # encoding: utf-8
 
-
+module Rsssf
+module Filters
 
 def html_to_txt( html )
 
@@ -146,4 +147,11 @@ def sanitize( txt )
 
   txt  
 end # method sanitize
+
+end # module Filters
+end # module Rsssf
+
+## add (shortcut) alias
+RsssfFilters = Rsssf::Filters
+
 

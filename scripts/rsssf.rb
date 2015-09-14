@@ -14,11 +14,8 @@ require './scripts/rsssf/fetch'
 require './scripts/rsssf/html2txt'
 require './scripts/rsssf/page'
 require './scripts/rsssf/schedule'
-
-require './scripts/rsssf/mkschedule'
-
+require './scripts/rsssf/patch'
 require './scripts/rsssf/utils'
-
 
 require './scripts/rsssf/reports/schedule'
 require './scripts/rsssf/reports/page'

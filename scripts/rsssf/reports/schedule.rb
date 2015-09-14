@@ -1,7 +1,8 @@
 # encoding: utf-8
 
-
-class RsssfScheduleReport
+module Rsssf
+     
+class ScheduleReport
 
 attr_reader :title
 
@@ -68,5 +69,9 @@ EOS
   txt
 end  # method build_summary
 
-end  ## class RsssfScheduleReport
+end  ## class ScheduleReport
+end  ## module Rsssf
+
+## add (shortcut) alias
+RsssfScheduleReport = Rsssf::ScheduleReport
 

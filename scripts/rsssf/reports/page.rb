@@ -1,7 +1,9 @@
 # encoding: utf-8
 
 
-class RsssfPageReport
+module Rsssf
+
+class PageReport
 
 attr_reader :title
 
@@ -55,4 +57,8 @@ EOS
   txt
 end  # method build_summary
 
-end  ## class RsssfPageReport
+end  ## class PageReport
+end  ## module Rsssf
+
+## add (shortcut) alias
+RsssfPageReport = Rsssf::PageReport

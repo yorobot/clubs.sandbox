@@ -1,32 +1,7 @@
 # encoding: utf-8
 
 
-
-## e.g. 2008/09
-##   note: also support 1999/2000
-SEASON = '\d{4}\/(\d{2}|\d{4})'  ## note: use single quotes - quotes do NOT get escaped (e.g. '\d' => "\\d")
-
-###
-## todo: move to module Rsssf ??  or patch.rb for (re)use ??
-##  add new Patcher class ??
-##  derive special patcher e.g. RsssfPatcherDe < RsssfPatcher  ??
-
-
-def patch_heading( txt, rxs, title )
-  rxs.each do |rx|
-    txt = txt.sub( rx ) do |match|
-      match = match.gsub( "\n", '$$')  ## change newlines to $$ for single-line outputs/dumps
-      puts "  found heading >#{match}<"
-      "\n\n#### #{title}\n\n"
-    end
-  end
-  txt
-end
-
-
-
-
-
+class RsssfPatcherDe < RsssfPatcher
 
 DE_BUNDESLIGA1 = [
   ## e.g. 1.Bundesliga or 1. Bundesliga
@@ -62,9 +37,7 @@ DE_CUP = [
 ]
 
 
-
-
-def patch_de( txt, name, year )
+def patch( txt, name, year )
   
   if year < 2010   # note: duit2010 starts a new format w/ heading 4 sections etc.
     ##  puts "  format -- year < 2010"
@@ -77,7 +50,9 @@ def patch_de( txt, name, year )
   end # year < 2010
 
   txt
-end # method patch_de
+end # method patch
+
+end # class RsssfPatcherDe
 
 
 

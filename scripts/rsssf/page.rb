@@ -1,16 +1,18 @@
 # encoding: utf-8
 
 
-RsssfPageStat = Struct.new(
-  :source,     ## e.g. http://rsssf.org/tabled/duit89.html
-  :basename,   ## e.g. duit89   -- note: filename w/o extension (and path)
-  :year,       ## e.g. 1989     -- note: always four digits
-  :season,     ## e.g. 1990-91  -- note: always a string (NOT a number)
-  :authors,
-  :last_updated,
-  :line_count,  ## todo: rename to (just) lines - why? why not?
-  :char_count,  ## todo: rename to (just) char(ectar)s  - why? why not?
-  :sections)
+module Rsssf
+
+  PageStat = Struct.new(
+    :source,     ## e.g. http://rsssf.org/tabled/duit89.html
+    :basename,   ## e.g. duit89   -- note: filename w/o extension (and path)
+    :year,       ## e.g. 1989     -- note: always four digits
+    :season,     ## e.g. 1990-91  -- note: always a string (NOT a number)
+    :authors,
+    :last_updated,
+    :line_count,  ## todo: rename to (just) lines - why? why not?
+    :char_count,  ## todo: rename to (just) char(ectar)s  - why? why not?
+    :sections)
 
 
 ###
@@ -22,10 +24,10 @@ RsssfPageStat = Struct.new(
 #   a rsssf page MUST be in plain text (.txt) and utf-8 character encoding assumed
 #
 
-class RsssfPage
+class Page
 
 def self.from_url( src )
-  txt = RsssfPageFetcher.new.fetch( src )
+  txt = PageFetcher.new.fetch( src )
   self.from_string( txt )
 end
 
@@ -201,7 +203,7 @@ def find_schedule( opts={} )     ## change to build_schedule - why? why not???
     end
   end  # each line
 
-  schedule = RsssfSchedule.from_string( new_txt )
+  schedule = Schedule.from_string( new_txt )
   schedule.rounds = round_count
 
   schedule
@@ -259,7 +261,7 @@ def build_stat
   year     = year_from_name( basename )
   season   = year_to_season( year )
 
-  rec = RsssfPageStat.new
+  rec = PageStat.new
   rec.source       = source         # e.g. http://rsssf.org/tabled/duit89.html   -- use source_url - why?? why not??
   rec.basename     = basename       # e.g. duit89
   rec.year         = year           # e.g. 89 => 1989  -- note: always four digits
@@ -280,5 +282,12 @@ def save( path )
   end
 end  ## method save
 
-end  ## class RsssfPage
+end  ## class Page
+end  ## module Rsssf
+
+
+## add (shortcut) alias
+RsssfPageStat = Rsssf::PageStat
+RsssfPage     = Rsssf::Page
+
 

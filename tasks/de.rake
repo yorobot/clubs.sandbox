@@ -15,9 +15,8 @@ end
 
 
 task :deup do
-  DE_REPO.patch_pages do |txt, name, year|
-    patch_de( txt, name, year )
-  end
+  patcher_de = RsssfPatcherDe.new
+  DE_REPO.patch_pages( patcher_de )
 end
 
 
