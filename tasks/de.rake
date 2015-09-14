@@ -1,34 +1,36 @@
 # encoding: utf-8
 
 
-DE_REPO  = '../de-deutschland'
-DE_TITLE = 'Germany (Deutschland)'
+DE_REPO_PATH  = '../de-deutschland'
+DE_TITLE      = 'Germany (Deutschland)'
+
+DE_REPO = RsssfRepo.new( DE_REPO_PATH, title: DE_TITLE )      
+
 
 
 
 task :de do
-  fetch_rsssf_pages( DE_REPO, YAML.load_file( "#{DE_REPO}/tables/config.yml") )
+  DE_REPO.fetch_pages
 end
 
 
 task :deup do
-  patch_dir( "#{DE_REPO}/tables" ) do |txt, name, year|
-    puts "patching #{year} (#{name})..."
+  DE_REPO.patch_pages do |txt, name, year|
     patch_de( txt, name, year )
   end
 end
 
+
 task :deiib do
   ## note: sanitize is part of html2txt (gets called at the end)
   ##  use deiib for testing/debugging/development/etc.
-  sanitize_dir( "#{DE_REPO}/tables" )
+  DE_REPO.sanitize_pages
 end
 
 
 task :deii do
-  make_rsssf_pages_summary( DE_TITLE, DE_REPO )
+  DE_REPO.make_pages_summary
 end
-
 
 
 

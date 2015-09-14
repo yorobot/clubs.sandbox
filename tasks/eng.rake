@@ -1,20 +1,23 @@
 # encoding: utf-8
 
 
-ENG_REPO  = '../eng-england'
-ENG_TITLE = 'England (and Wales)'
+ENG_REPO_PATH  = '../eng-england'
+ENG_TITLE      = 'England (and Wales)'
+
+ENG_REPO = RsssfRepo.new( ENG_REPO_PATH, title: ENG_TITLE )
 
 ## Premiership  in 2011,2012, 2013
 ## Premier League in 2014, 2015
-##
-## todo/fix:
-### reading >../en-england/tables/eng2014.txt<
-##  includes  invalid byte sequence in UTF-8 !!!
 
 
 
 task :eng do
-  fetch_rsssf_pages( ENG_REPO, YAML.load_file( "#{ENG_REPO}/tables/config.yml") )
+  ENG_REPO.fetch_pages
+end
+
+task :engii do
+  ## ENG_REPO.sanitize_pages  ## - note: alreay included in html2txt filter; (re)run for debugging/testing
+  ENG_REPO.make_pages_summary
 end
 
 
@@ -46,14 +49,6 @@ task :eng2 do
 
 
   make_readme( ENG_TITLE, ENG_REPO, stats )
-end
-
-
-
-task :engii do
-  ## sanitize_dir( "#{DE_REPO}/tables" )
-  ## rsssf_pages_stats_for_dir( "#{DE_REPO}/tables" )
-  make_summary( ENG_TITLE, ENG_REPO )
 end
 
 

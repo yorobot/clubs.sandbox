@@ -18,10 +18,10 @@ end
 
 
 task :atup do
-  patch_dir( "#{AT_REPO}/tables" ) do |txt, name, year|
-    puts "patching #{year} (#{name})..."
+  AT_REPO.patch_pages do |txt, name, year|
     ## to be done
     ## patch_at( txt, name, year )
+    txt     ## note: must return t(e)xt
   end
 end
 

@@ -19,9 +19,9 @@ require './scripts/rsssf/mkschedule'
 
 require './scripts/rsssf/utils'
 
-require './scripts/rsssf/patch'
-require './scripts/rsssf/de/patch'
 
 require './scripts/rsssf/reports/schedule'
 require './scripts/rsssf/reports/page'
+
+require './scripts/rsssf/repo'
 

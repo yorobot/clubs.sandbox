@@ -2,7 +2,8 @@
 
 require './scripts/rsssf'
 
-require './scripts/repo'
+## add patch configs
+require './scripts/de/patch'
 
 
 ############################################

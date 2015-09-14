@@ -144,23 +144,6 @@ def sanitize( txt )
     ''
   end
 
-
   txt  
 end # method sanitize
-
-
-def sanitize_dir( root )
-  files = Dir[ "#{root}/*.txt" ]
-
-  files.each do |file|
-    txt = File.read_utf8( file )
-    ## was: txt.force_encoding( 'ASCII-8BIT' )  ## fix: check for chars > 127 (e.g. not 7-bit)
-
-    new_txt = sanitize( txt )
-
-    File.open( file, 'w' ) do |f|
-      f.write new_txt
-    end
-  end # each file
-end  ## sanitize_dir
 
