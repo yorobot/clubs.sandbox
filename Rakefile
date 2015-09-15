@@ -1,6 +1,8 @@
 # encoding: utf-8
 
-require './scripts/rsssf'
+
+## 3rd party libs/gems
+require 'rsssf'         # note: rsssf code moved to gem; see sportdb/rsssf
 
 ## add patch configs
 require './scripts/de/patch'
