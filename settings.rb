@@ -1,6 +1,11 @@
 
 # input repo sources config
 
+# --- rsssf ---
+RSSSF_ROOT    = "../../rsssf"
+
+
+
 # --- world.db ---
 
 OPENMUNDI_ROOT        = "../../openmundi"

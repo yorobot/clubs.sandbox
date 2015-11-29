@@ -5,7 +5,7 @@
 require 'rsssf'         # note: rsssf code moved to gem; see sportdb/rsssf
 
 ## add patch configs
-require './scripts/de/patch'
+require './lib/de/patch'
 
 
 ############################################

@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 
-DE_REPO_PATH  = '../de-deutschland'
+DE_REPO_PATH  = "#{RSSSF_ROOT}/de-deutschland"
 DE_TITLE      = 'Germany (Deutschland)'
 
 DE_REPO = RsssfRepo.new( DE_REPO_PATH, title: DE_TITLE )      

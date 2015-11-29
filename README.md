@@ -6,23 +6,23 @@ Use
 
 **Step 1 - Fetch Pages**
 
-Uses the 
+Uses the `tables/config.yml` file listing all pages to fetch.
 
 ```
-$ rake dei      ## uses DE_REPO.fetch_pages
+$ rake dei      ## uses RsssfRepo#fetch_pages
 ```
 
 
 **Step 2 - Patch Pages**
 
 ```
-$ rake deii     ## uses DE_REPO.patch_pages
+$ rake deii     ## uses RsssfRepo#patch_pages
 ```
 
 **Step 3 - Make Pages Summary**
 
 ```
-$ rake deiii    ## uses DE_REPO.make_pages_summary
+$ rake deiii    ## uses RsssfRepo#make_pages_summary
 ```
 
 
@@ -31,6 +31,6 @@ $ rake deiii    ## uses DE_REPO.make_pages_summary
 Use
 
 ```
-$ rake dev    ## uses DE_REPO.make_schedules
+$ rake dev    ## uses RsssfRepo#make_schedules
 ```
 
