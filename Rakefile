@@ -4,6 +4,7 @@
 ## 3rd party libs/gems
 require 'rsssf'         # note: rsssf code moved to gem; see sportdb/rsssf
 
+require './lib/standings'
 ## add patch configs
 require './lib/de/patch'
 
