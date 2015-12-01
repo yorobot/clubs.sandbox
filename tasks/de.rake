@@ -65,6 +65,12 @@ end
 
 
 
+
+##
+#  for testing for now try:
+#
+#  $ rake build recalc_de DATA=de
+
 task :importde => :importbuiltin do
 
   de = WorldDb::Model::Country.find_by!( key: 'de' )
@@ -90,8 +96,9 @@ task :importde => :importbuiltin do
   ## last but not least read rsssf files (from rsssf repo)
   ['2014-15', '2013-14'].each do |season|
     ## note: rsssf text read in as iso-8859-15 for now (fix: convert in importer to utf-8!!)
-    txt = File.open( "#{DE_RSSSF_PATH}/#{season}/1-bundesliga.txt", "r:iso-8859-15" ).read
-    txt = txt.encode( "utf-8" )
+    ## txt = File.open( "#{DE_RSSSF_PATH}/#{season}/1-bundesliga.txt", "r:iso-8859-15" ).read
+    ## txt = txt.encode( "utf-8" )
+    txt = File.read_utf8( "#{DE_RSSSF_PATH}/#{season}/1-bundesliga.txt" )
     
     pp txt
     event_key = "de.#{season.tr('-','/')}"    ## e.g. 2014-15 => de.2014/15
