@@ -83,23 +83,6 @@ task :importbuiltin => :env do
 end
 
 
-
-
-####################################################
-#  move to main Rakefile - why? why not??
-#   or to scripts/utils.rb ????
-
-def debug?
-  debug_value = ENV['DEBUG']
-  if debug_value &&  ['true', 't', 'yes', 'y'].include?( debug_value.downcase )
-    true
-  else
-    false
-  end 
-end
-
-
-
 task :importall => [:importde] do
 end
 

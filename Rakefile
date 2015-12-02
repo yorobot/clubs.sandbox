@@ -4,6 +4,11 @@
 ## 3rd party libs/gems
 require 'rsssf'         # note: rsssf code moved to gem; see sportdb/rsssf
 
+
+require './settings'
+
+require './lib/rake'    # rake utils e.g. load_tasks, debug?, etc.
+
 require './lib/standings'
 ## add patch configs
 require './lib/de/patch'
@@ -11,10 +16,7 @@ require './lib/de/patch'
 
 ############################################
 # add more tasks (keep build script modular)
+load_tasks()
 
-Dir.glob('./tasks/**/*.rake').each do |r|
-  puts "  importing task >#{r}<..."
-  import r
-  # see blog.smartlogicsolutions.com/2009/05/26/including-external-rake-files-in-your-projects-rakefile-keep-your-rake-tasks-organized/
-end
+
 
