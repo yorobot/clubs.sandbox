@@ -1,10 +1,10 @@
 # encoding: utf-8
 
 
-ENG_REPO_PATH  = '../eng-england'
+ENG_RSSSF_PATH  = "#{RSSSF_ROOT}/eng-england"
 ENG_TITLE      = 'England (and Wales)'
 
-ENG_REPO = RsssfRepo.new( ENG_REPO_PATH, title: ENG_TITLE )
+ENG_REPO = RsssfRepo.new( ENG_RSSSF_PATH, title: ENG_TITLE )
 
 ## Premiership  in 2011,2012, 2013
 ## Premier League in 2014, 2015
@@ -63,3 +63,40 @@ task :debugeng do
 end
 
 
+##
+#  for testing for now try:
+#
+#  $ rake build recalc_eng DATA=eng
+
+task :importeng => :importbuiltin do
+
+  fx1 = [
+   'clubs/1-premierleague',
+   'clubs/2-championship',
+   'clubs/wales',
+   'leagues', 
+   '2015-16/1-premierleague',
+   '2014-15/1-premierleague',
+   '2013-14/1-premierleague'
+  ]
+
+  prepare_rsssf_for_country( 'eng', fx1, ENG_INCLUDE_PATH )
+
+  fx2 = {
+    'en.2014/15' => '2014-15/1-premierleague',
+    'en.2013/14' => '2013-14/1-premierleague'
+  }
+
+  read_rsssf( fx2, ENG_RSSSF_PATH )   ## note: use en for league key (NOT eng)  
+end
+
+
+task :recalc_eng => :configsport do
+  out_root = debug? ? './build/eng-england' : ENG_RSSSF_PATH
+
+  [['en.2013/14'],
+   ['en.2014/15']].each do |event_key|
+     recalc_standings( event_key, out_root: out_root )
+     ## recalc_stats( out_root: out_root )
+  end
+end

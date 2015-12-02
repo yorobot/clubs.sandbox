@@ -65,37 +65,25 @@ end
 
 task :importat => :importbuiltin do
 
-  at = WorldDb::Model::Country.find_by!( key: 'at' )
+  fx1 = [
+   'clubs/1-bundesliga',
+   'clubs/2-liga1',
+   'leagues', 
+   '2015-16/1-bundesliga',
+   '2014-15/1-bundesliga',
+   '2013-14/1-bundesliga'
+  ]
 
-  ## read in clubs
-  ##  note: requires country_id
-  ['1-bundesliga', '2-liga1'].each do |clubs|
-    r = SportDb::TeamReader.from_file( "#{AT_INCLUDE_PATH}/clubs/#{clubs}.txt", country_id: at.id)
-    r.read
-  end
+  prepare_rsssf_for_country( 'at', fx1, AT_INCLUDE_PATH )
 
-  ## read in leagues
-  ##  note: requires country_id 
-  r = SportDb::LeagueReader.from_file( "#{AT_INCLUDE_PATH}/leagues.txt", country_id: at.id )
-  r.read
+  fx2 = {
+    'at.2014/15' => '2014-15/1-bundesliga',
+    'at.2013/14' => '2013-14/1-bundesliga'
+  }
 
-  ## read in event configs (no fixtures)
-  ['2015-16', '2014-15', '2013-14'].each do |season|
-    r = SportDb::EventReader.from_file( "#{AT_INCLUDE_PATH}/#{season}/1-bundesliga.yml" )
-    r.read  
-  end
-  
-  ## last but not least read rsssf files (from rsssf repo)
-  ['2014-15', '2013-14'].each do |season|
-    txt = File.read_utf8( "#{AT_RSSSF_PATH}/#{season}/1-bundesliga.txt" )
-    pp txt
-
-    event_key = "at.#{season.tr('-','/')}"    ## e.g. 2014-15 => at.2014/15
-    r = SportDb::RsssfGameReader.from_string( event_key, txt )
-    r.read
-  end
-
+  read_rsssf( fx2, AT_RSSSF_PATH ) 
 end
+
 
 task :recalc_at => :configsport do
   out_root = debug? ? './build/at-austria' : AT_RSSSF_PATH

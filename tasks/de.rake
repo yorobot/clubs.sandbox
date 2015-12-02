@@ -73,40 +73,25 @@ end
 
 task :importde => :importbuiltin do
 
-  de = WorldDb::Model::Country.find_by!( key: 'de' )
+  fx1 = [
+   'clubs/1-bundesliga',
+   'clubs/2-bundesliga2',
+   'leagues', 
+   '2015-16/1-bundesliga',
+   '2014-15/1-bundesliga',
+   '2013-14/1-bundesliga'
+  ]
 
-  ## read in clubs
-  ##  note: requires country_id   e.g. de.id
-  ['1-bundesliga', '2-bundesliga2'].each do |clubs|
-    r = SportDb::TeamReader.from_file( "#{DE_INCLUDE_PATH}/clubs/#{clubs}.txt", country_id: de.id)
-    r.read
-  end
+  prepare_rsssf_for_country( 'de', fx1, DE_INCLUDE_PATH )
 
-  ## read in leagues
-  ##  note: requires country_id   e.g. de.id
-  r = SportDb::LeagueReader.from_file( "#{DE_INCLUDE_PATH}/leagues.txt", country_id: de.id )
-  r.read
+  fx2 = {
+    'de.2014/15' => '2014-15/1-bundesliga',
+    'de.2013/14' => '2013-14/1-bundesliga'
+  }
 
-  ## read in event configs (no fixtures)
-  ['2015-16', '2014-15', '2013-14'].each do |season|
-    r = SportDb::EventReader.from_file( "#{DE_INCLUDE_PATH}/#{season}/1-bundesliga.yml" )
-    r.read  
-  end
-  
-  ## last but not least read rsssf files (from rsssf repo)
-  ['2014-15', '2013-14'].each do |season|
-    ## note: rsssf text read in as iso-8859-15 for now (fix: convert in importer to utf-8!!)
-    ## txt = File.open( "#{DE_RSSSF_PATH}/#{season}/1-bundesliga.txt", "r:iso-8859-15" ).read
-    ## txt = txt.encode( "utf-8" )
-    txt = File.read_utf8( "#{DE_RSSSF_PATH}/#{season}/1-bundesliga.txt" )
-    
-    pp txt
-    event_key = "de.#{season.tr('-','/')}"    ## e.g. 2014-15 => de.2014/15
-    r = SportDb::RsssfGameReader.from_string( event_key, txt )
-    r.read
-  end
-
+  read_rsssf( fx2, DE_RSSSF_PATH ) 
 end
+
 
 task :recalc_de => :configsport do
   out_root = debug? ? './build/de-deutschland' : DE_RSSSF_PATH
