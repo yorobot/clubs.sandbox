@@ -1,0 +1,192 @@
+
+## austrian bundesliga - add season 2024/25 !!
+
+
+Grazer AK	
+  GAK
+
+RB Salzburg
+SCR Altach
+  Altach	
+WSG Tirol	
+  Tirol
+
+TSV Hartberg
+  Hartberg	 
+LASK
+Wolfsberger AC
+  WAC
+SK Austria Klagenfurt
+
+Rapid Wien	
+  SK Rapid Wien
+
+Sturm Graz	
+  Sturm
+
+FC Blau Weiß Linz
+  BW Linz	
+
+Austria Wien	
+  FK Austria Wien
+  FAK
+
+
+###############
+## 2. Liga
+
+
+##
+##  fix - change B teams from (A) "Amateure"
+##            to B or II !!!
+##        do NOT use (A) !!!!!
+##  auto-fix via mods!!!
+
+Rapid Wien (A)	
+Sturm Graz (A)	
+
+
+FC Liefering
+First Vienna FC
+  Vienna
+ASK Voitsberg
+SKU Amstetten	
+SV Stripfing/Weiden	
+SV Ried	
+SV Horn	
+FC Admira Wacker	
+Kapfenberger SV 1919
+  KSV	
+Austria Lustenau	
+SV Lafnitz	
+Schwarz-Weiß Bregenz
+Floridsdorfer AC
+  FAC	
+SKN St. Pölten	
+
+
+####
+#  öfb cup 2024/25
+
+ASKÖ Köttmannsdorf
+SV Horn
+Union Gurten	
+LASK
+ATUS Velden	
+Grazer AK
+SC Wiener Viktoria	
+DSV Leoben
+FC Dornbirn
+RB Salzburg
+SK Treibach	
+Kapfenberger SV 1919
+SV Wallern
+FC Kitzbühel
+SC Weiz	
+SV Lafnitz
+FCM Traiskirchen
+SKU Amstetten
+SV Wals-Grünau	
+Austria Lustenau
+SV Gloggnitz	
+SK Austria Klagenfurt
+SK Bischofshofen
+TSV Hartberg
+ASV Draßburg
+Wolfsberger AC
+Deutschlandsberger SC
+SC Korneuburg
+FC Marchfeld Donauauen
+First Vienna FC	
+SV Oberwart
+SV Stripfing/Weiden
+Austria Salzburg
+SVG Reichenau
+Union Dietach
+WSC Hertha
+SR Donaufeld
+SCR Altach
+ASK Klagenfurt
+Sportunion Mauer
+SC Schwaz
+Schwarz-Weiß Bregenz
+SV Wildon
+FC Blau Weiß Linz
+VfB Hohenems
+ASKÖ Oedt
+Kremser SC
+Sturm Graz
+SV Donau Wien
+ASK Voitsberg
+USV St. Anna
+FC Admira Wacker
+SV Leobendorf
+SKN St. Pölten
+ASV Siegendorf
+Floridsdorfer AC
+SC Röthis	
+SV Ried
+FC Pinzgau Saalfelden
+Austria Wien
+SC Imst
+WSG Tirol
+SC Neusiedl/See 1919
+Rapid Wien
+
+
+
+########
+#  OÖ liga
+
+Union Dietach
+Union Weißkirchen
+  SPG Weißkirchen/Allhaming
+
+Sportunion St. Martin im Mühlkreis
+  Union St. Martin/M.	
+
+SV Bad Schallerbach
+Union Mondsee
+Union Edelweiß Linz
+  SPG Edelweiss Linz/Neue Heimat
+
+Union Ostermiething
+
+SV Friedburg
+  SPG Friedburg/Pöndorf
+  SPG Friedburg/P.
+
+
+SV Grün-Weiß Micheldorf
+  SV GW Micheldorf	
+
+SV Bad Ischl
+SU Bad Leonfelden
+Union Perg
+ DSG Union Perg
+
+SPG Pregarten
+
+ASK St. Valentin
+SV Gmunden
+Union Rohrbach/Berg	
+  UFC Rohrbach-Berg
+
+SC Marchtrenk
+FC Hertha Wels	
+SK Vorwärts Steyr
+
+St. Florian/Niederneukirchen	
+
+SV Gmunden
+
+  
+
+
+LASK Amateure OÖ 
+Junge Wikinger Ried
+WAC Amateure
+
+
+
+

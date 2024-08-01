@@ -2,17 +2,8 @@ require_relative 'boot'
 
 
 
-## fix - use new style  e.g.   Club.find_by
-##                             Country.find_by etc.
-##   no reference to SportDb::Import needed
 
-COUNTRIES = SportDb::Import.world.countries
-CLUBS     = SportDb::Import.catalog.clubs
-
-
-datasets = ['ch',  # switzerland +
-            'li',  # lichtenstein
-            'cz',  # czech republic 
+datasets = ['cz',  # czech republic 
             'co',  # columbia 
             'eg',  # egypt
             'il',  # isreal
@@ -21,13 +12,20 @@ datasets = ['ch',  # switzerland +
             'py',  # paraguay
             'fr',  # france
             'tr',  # turkey
+
+            'at',  # austria
+            'ch',  # switzerland +
+            'li',  # lichtenstein
             'de',  # germany
-          ]
+  ]
 
 
+totals = Hash.new(0)
 
-datasets.each do |code|
-  country = COUNTRIES.find_by_code( code )
+datasets.each_with_index do |code,i|
+  country = Country.find_by( code: code )
+  puts
+  puts "===> #{i+1}/#{datasets.size}"
   pp country
  
      txt = read_data( "more_clubs/#{code}.txt" )
@@ -36,28 +34,31 @@ datasets.each do |code|
   ## todo - use unaccent to avoid duplicates with different accents/diacritics/etc.
   missing_clubs = Hash.new(0)  ## index by league code
 
+  
 
-  txt.each_with_index do |(name,_),i|
+  txt.each_with_index do |(name,_),j|
 
-    m = CLUBS.match_by( name: name, country: country )
+    m = Club.match_by( name: name, country: country )
 
     if m.empty?
        puts "!! #{name}"
        missing_clubs[ name ] += 1
     elsif m.size > 1
+        puts
         puts "!! too many matches (#{m.size}) for club >#{name}<:"
         pp m
         exit 1
-      else  # bingo; match
+    else  # bingo; match
         print "     OK "
         if name != m[0].name
-            print "%-20s => %-20s" % [name, m[0].name] 
+            print "%-28s => %-28s" % [name, m[0].name] 
         else
             print name
         end
         print "\n"
-      end
-   end
+    end
+  end
+
 
    if missing_clubs.size > 0
      puts
@@ -71,7 +72,20 @@ datasets.each do |code|
      end
      puts
 
-     exit 1
+     ## adding missing clubs for country to totals
+     totals[country.name] = missing_clubs 
+   end
+end
+
+
+
+if totals.size > 0
+   puts 
+   puts "totals:"
+   pp totals
+
+   totals.each do |country_name, clubs|
+      puts "  #{clubs.size} club name(s) in #{country_name}"
    end
 end
 

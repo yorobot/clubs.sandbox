@@ -2,32 +2,237 @@
 # add 18 Regionalliga Bayern 2024/25 clubs (de.4.bayern)
 
 Würzburger Kickers
+  Würzburg
 
 DJK Vilzing,    Cham (Vilzing)
   Deutsche Jugendkraft Vilzing
-
+  Vilzing
 
 1. FC Nürnberg II
-TSV Aubstadt
-FV Illertissen
-FC Bayern München II
-FC Augsburg II
-SpVgg Greuther Fürth II
-Wacker Burghausen
-1. FC Schweinfurt 05
-Türkgücü München
-SpVgg Bayreuth 
+   Nürnberg II
 
-SpVgg Ansbach 09 
+TSV Aubstadt
+  Aubstadt
+
+FV Illertissen
+  Illertissen
+
+FC Bayern München II
+  FC Bayern II
+  Bayern II
+
+FC Augsburg II
+   Augsburg II
+
+TSV Schwaben Augsburg 
+  Schwaben Augsburg 
+  Schw. Augsburg
+
+
+
+SpVgg Greuther Fürth II
+SpVgg Gr. Fürth II
+   Fürth II
+
+Wacker Burghausen
+  Burghausen
+
+1. FC Schweinfurt 05
+  Schweinfurt
+
+Türkgücü München
+  Türkgücü
+
+SpVgg Bayreuth 
+   Bayreuth 
+
+SpVgg Ansbach
+  Ansbach
+  SpVgg Ansbach 09 
   Spielvereinigung Ansbach 09 
 
 Viktoria Aschaffenburg 
+  Aschaffenburg
 
 # aus den niederbayerischen Dörfern Hankofen und Hailing der Gemeinde Leiblfing.
 SpVgg Hankofen-Hailing   
   Spielvereinigung Hankofen-Hailing 1968
+  SpVgg Hankofen-H.
+  Hankofen
 
-TSV Schwaben Augsburg 
+
+
 FC Eintracht Bamberg 
+   Bamberg 
+
 TSV Buchbach 
+  Buchbach 
+
+
+Wacker Burghausen	
+Bayern München II
+SpVgg Ansbach	
+1. FC Nürnberg II	
+1. FC Schweinfurt 05	
+TSV Aubstadt
+TSV Schwaben Augsburg
+Viktoria Aschaffenburg
+Eintracht Bamberg	
+SpVgg Hankofen-Hailing
+FV Illertissen	
+DJK Vilzing
+SpVgg Bayreuth	
+TSV Buchbach
+SpVgg Greuther Fürth II
+FC Augsburg II
+Türkgücü München	
+Würzburger Kickers
+
+
+
+#####################
+## check bundesliga 
+
+Leverkusen
+  Bayer Leverkusen
+Stuttgart
+  VfB Stuttgart
+Bayern
+  FC Bayern
+Leipzig
+  RB Leipzig
+## note - change to RB Leipzig ??? - why? why not?
+##   or better use year ??
+##   OK Leipzig     => VfB Leipzig (-2004)
+
+Dortmund
+  Bor. Dortmund
+Frankfurt
+  Eintr. Frankfurt
+Hoffenheim
+  1899 Hoffenheim
+Heidenheim
+  1. FC Heidenheim
+Bremen
+  Werder Bremen
+Freiburg
+  SC Freiburg
+Augsburg
+  FC Augsburg
+Wolfsburg
+  VfL Wolfsburg
+Mainz
+  Mainz 05
+M'gladbach
+  Bor. M'gladbach
+
+Union
+  Union Berlin
+Bochum
+  VfL Bochum
+Köln
+  1. FC Köln
+Darmstadt
+  Darmstadt 98
+
+
+########
+## 2. liga
+
+St. Pauli 
+  FC St. Pauli
+Kiel 
+  Holstein Kiel
+
+Düsseldorf
+  Fortuna Düsseldorf
+HSV
+  Hamburger SV
+Karlsruhe
+  Karlsruher SC
+  KSC
+Hannover
+  Hannover 96
+
+Paderborn
+  SC Paderborn
+  SC Paderborn 07
+  Sport-Club Paderborn 07
+
+
+Greuther Fürth
+  SpVgg Greuther Fürth
+Hertha
+  Hertha BSC
+Schalke
+   Schalke 04
+
+Elversberg
+  SV Elversberg
+  SpVgg 07 Elversberg
+  Sportvereinigung 07 Elversberg
+
+
+Nürnberg
+  1. FC Nürnberg
+Kaiserslautern
+  1. FC Kaiserslautern
+Magdeburg
+  1. FC Magdeburg
+Braunschweig
+  Eintr. Braunschweig
+Wehen Wiesb.
+  SV Wehen Wiesbaden
+Rostock
+  Hansa Rostock
+Osnabrück
+  VfL Osnabrück
+
+
+
+
+###
+#  add 3. liga
+
+Ulm 
+  SSV Ulm 1846
+Münster
+  Preußen Münster
+Regensburg
+  Jahn Regensburg
+Dresden
+  Dynamo Dresden
+Saarbrücken
+  1. FC Saarbrücken
+Aue 
+  Erzgebirge Aue 
+Essen 
+  Rot-Weiss Essen
+Sandhausen 
+  SV Sandhausen
+Unterhaching 
+  SpVgg Unterhaching 
+Ingolstadt 
+  FC Ingolstadt
+Dortmund II 
+  Borussia Dortmund II 
+Verl 
+  SC Verl
+Vikt. Köln 
+  Viktoria Köln
+Bielefeld 
+  Arminia Bielefeld
+1860 München 
+Mannheim 
+  Waldhof Mannheim
+
+Halle 
+Duisburg 
+Lübeck 
+Freiburg II 
+Hannover 96 II
+
+Energie Cottbus
+Alemannia Aachen
+VfB Stuttgart II
 

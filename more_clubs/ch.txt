@@ -1,17 +1,73 @@
-# super league
+# super league 12 teams 
 BSC Young Boys
+  Young Boys Bern
+  YB Bern
+
 FC Lugano
+  Lugano
+
 Servette FC
+  Servette
+  Servette Genf
+  Genf
+
 FC Zürich
 FC St. Gallen
+   St. Gallen
+
 FC Winterthur
+   Winterthur
+
 
 FC Luzern
+  Luzern
 FC Basel
+  Basel
+
+##  based in Yverdon-les-Bains
 Yverdon Sport FC
+  Yverdon-Sport FC
+  Yverdon
+
+
 FC Lausanne-Sport
+  Lausanne
+
 Grasshopper Club Zürich
+  Grasshopper Zürich
+  Grasshoppers
+
+
 Stade-Lausanne-Ouchy
+
+FC Sion
+  Sion
+
+
+FC Lugano	
+Grasshopper Club Zürich
+Yverdon Sport FC	
+  Yverdon Sport Football Club
+
+
+FC Zürich	
+FC Winterthur
+	 Winterthur
+FC St. Gallen
+  St. Gallen
+
+BSC Young Boys
+  Berner Sport-Club Young Boys
+  Young Boys
+
+
+FC Sion
+FC Lausanne-Sport	
+FC Basel
+FC Luzern
+Servette FC
+
+
 
 
 # League SUI 2 (2) - >Schweiz Challenge League<:
@@ -21,6 +77,20 @@ FC Baden
 
 
 ## challenge league
+
+
+Stade Nyonnais	
+FC Schaffhausen	
+FC Thun Berner Oberland	
+Stade-Lausanne-Ouchy
+AC Bellinzona	
+Etoile Carouge FC
+FC Aarau	
+Neuchâtel Xamax FCS
+FC Wil 1900	
+
+
+
 FC Sion
 FC Thun Berner Oberland
 Neuchâtel Xamax FCS
