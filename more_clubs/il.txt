@@ -1,0 +1,85 @@
+# League ISR 1 (3) - >Israel Superliga<:
+
+  Beitar Jerusalem  
+    Bnei Sachnin FC
+    FC Ashdod
+  Ashdod SC
+    Hapoel Be'er Sheva
+    Hapoel Hadera  
+    Hapoel Haifa  
+  
+    Hapoel Jerusalem
+  
+    Hapoel Petach-Tikva  
+    Hapoel Tel Aviv
+
+    Maccabi Bnei Raina
+  Maccabi Bnei Reine
+
+Maccabi Haifa  
+Maccabi Netanya
+Maccabi Petach-Tikva
+  Mac. Petach Tikva
+Maccabi Tel Aviv
+
+FC Ashdod,  Ashdod
+Hapoel Be'er Sheva,  Be'er Sheva
+Hapoel Hadera,   Hadera
+Hapoel Haifa,   Haifa
+Maccabi Haifa,  Haifa
+Beitar Jerusalem,  Jerusalem
+Hapoel Jerusalem,  Jerusalem
+Maccabi Netanya,   Netanya
+Hapoel Petah Tikva,  Petah Tikva
+Maccabi Petah Tikva,   Petah Tikva
+Maccabi Bnei,  Reineh
+Bnei Sakhnin,  Sakhnin
+Hapoel Tel Aviv,   Tel Aviv
+Maccabi Tel Aviv,   Tel Aviv
+
+
+# League ISR 2 (5) - >Israel National League<:
+
+Hapoel Acre,  Acre
+Hapoel Afula, Afula
+Maccabi Herzliya, Herzliya
+  Maccabi Herzliya
+FC Kafr Qasim, Kafr Qasim
+Hapoel Kfar Saba, Kfar Saba
+Ironi Kiryat Shmona, Kiryat Shmona
+Sektzia Ness Ziona,  Ness Ziona
+Hapoel Nof HaGalil,  Nof HaGalil
+  H. Nof HaGalil
+
+Hapoel Ramat Gan,  Ramat Gan
+Hapoel Ramat HaSharon, Ramat HaSharon
+Hapoel Nir Ramat HaSharon
+
+
+Hapoel Rishon LeZion, Rishon LeZion
+Ihud Bnei Shefa-'Amr, Shefa-'Amr
+  Ihud Shefa-AMR
+Bnei Yehuda Tel Aviv, Tel Aviv
+Maccabi Jaffa, Tel Aviv
+  Maccabi Jaffa
+Ironi Tiberias,   Tiberias
+  Ironi Tiberias
+Hapoel Umm al-Fahm,   Umm al-Fahm
+  El Fahem
+  Hapoel Umm al-Fahm FC
+
+
+# League ISR CUP (2) - >Israel Cup<:
+
+Hapoel Herzliya,  Herzliya  
+
+
+Maccabi Ahi Nazareth,   Nazareth
+Maccabi Ironi Ashdod,   Ashdod
+
+Maccabi Ironi Kiryat Ata,  Kiryat Ata
+Maccabi Kabilio Jaffa,  Tel Aviv 
+Maccabi Yavne,  Yavne 
+MS Dimona,  Dimona 
+MS Kafr Qasim,  Kafr Qasim
+Tzeirei Kafr Kanna,   Kafr Kanna 

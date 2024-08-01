@@ -1,0 +1,105 @@
+# super league
+BSC Young Boys
+FC Lugano
+Servette FC
+FC Zürich
+FC St. Gallen
+FC Winterthur
+
+FC Luzern
+FC Basel
+Yverdon Sport FC
+FC Lausanne-Sport
+Grasshopper Club Zürich
+Stade-Lausanne-Ouchy
+
+
+# League SUI 2 (2) - >Schweiz Challenge League<:
+FC Stade Nyonnais
+FC Baden
+
+
+
+## challenge league
+FC Sion
+FC Thun Berner Oberland
+Neuchâtel Xamax FCS
+FC Wil 1900
+FC Aarau
+Stade Nyonnais
+AC Bellinzona
+FC Schaffhausen
+FC Baden
+
+# League SUI SL (2) - >Schweiz Super League<:
+Yverdon-Sport
+Lausanne-Ouchy
+
+# League SUI CUP (1) - >Schweiz Cup<:
+  SR Delemont
+
+## cup
+AC Bellinzona
+AC Malcantone
+AC Taverne
+BSC Young Boys
+Etoile Carouge FC
+FC Aarau
+FC Affoltern
+FC Ajoie-Monterri
+FC Baden
+FC Basel
+FC Black Stars Basel
+FC Bosporus
+FC Breitenrain Bern
+FC Buchs AG
+FC Bulle
+FC Collina d'Oro
+FC Courtételle
+FC Dietikon
+FC Frutigen
+FC Genolier-Begnins
+FC Grand-Saconnex
+FC Greifensee
+FC Gunzwil
+FC Haute-Gruyère
+FC La Chaux-de-Fonds
+FC Lancy
+FC Lausanne-Sport
+FC Lugano
+FC Luzern
+FC Mendrisio
+FC Meyrin
+FC Onex
+FC Porrentruy
+FC Rapperswil-Jona
+FC Red Star Zürich
+FC Saint-Blaise
+FC Savièse
+FC Schaffhausen
+FC Schönenwerd-Niedergösgen
+FC Sion
+FC St. Gallen
+FC Thun Berner Oberland
+FC Tuggen
+FC Wettswil-Bonstetten	
+FC Widnau	
+FC Wil 1900	
+FC Winkeln St. Gallen	
+FC Winterthur	
+FC Zürich	
+Grasshopper Club Zürich	
+Iliria Solothurn	
+Neuchâtel Xamax FCS
+SC Brühl	
+SC Cham	
+SC Kriens	
+Servette FC
+SR Delémont
+Stade Nyonnais
+Stade-Lausanne-Ouchy
+SV Höngg	
+SV Schaffhausen	
+Vevey-Sports	
+VfR Kleinhüningen
+Yverdon Sport FC	
