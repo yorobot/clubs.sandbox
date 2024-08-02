@@ -236,3 +236,156 @@ Energie Cottbus
 Alemannia Aachen
 VfB Stuttgart II
 
+
+###
+#  check dfb pokal 2024/25
+
+SV Wehen Wiesbaden
+1. FSV Mainz 05
+Hallescher FC
+FC St. Pauli
+SSV Ulm 1846
+Bayern München
+Würzburger Kickers
+1899 Hoffenheim
+Erzgebirge Aue
+Bor. Mönchengladbach
+TSV Schott Mainz
+SpVgg Greuther Fürth
+FC 08 Villingen
+1. FC Heidenheim 1846
+Rot-Weiss Essen
+RB Leipzig
+FC Ingolstadt 04
+1. FC Kaiserslautern
+VfR Aalen
+FC Schalke 04
+VfL Osnabrück
+SC Freiburg
+
+Greifswalder FC
+  Greifswald
+##  Greifswalder FC was formed on 1 July 2015 through the merger
+##   of Greifswalder SV with Pommern Greifswald
+
+1. FC Union Berlin
+Arminia Bielefeld
+Hannover 96
+1. FC Phönix Lübeck
+Borussia Dortmund
+Alemannia Aachen
+Holstein Kiel
+1. FC Saarbrücken
+1. FC Nürnberg
+FC Viktoria 1889 Berlin
+FC Augsburg
+Bremer SV
+SC Paderborn 07
+Jahn Regensburg
+VfL Bochum
+
+
+VfV Hildesheim
+  VfV 06 Hildesheim
+  VfV Borussia 06 Hildesheim
+  VfV Borussia 06
+  VfV 06
+## VfV 06 Hildesheim was formed on 1 July 2003 in a merger
+##  of the football department of VfV Hildesheim 
+##  and Borussia 06 Hildesheim.
+
+SV 07 Elversberg
+SV Sandhausen
+1. FC Köln
+Hansa Rostock
+Hertha BSC
+FC Teutonia 05
+SV Darmstadt 98
+Dynamo Dresden
+Fortuna Düsseldorf
+Sportfreunde Lotte
+Karlsruher SC
+SV Meppen
+Hamburger SV
+Energie Cottbus
+Werder Bremen
+Kickers Offenbach
+1. FC Magdeburg
+Eintracht Braunschweig
+Eintracht Frankfurt
+TuS Koblenz
+VfL Wolfsburg
+Preußen Münster
+VfB Stuttgart
+FC Carl Zeiss Jena
+Bayer Leverkusen
+
+###
+# more checks
+
+
+Alemannia Aachen	
+VfR Aalen
+Erzgebirge Aue
+FC Augsburg
+1. FC Union Berlin
+Hertha BSC
+FC Viktoria 1889 Berlin
+Arminia Bielefeld
+VfL Bochum
+Eintracht Braunschweig
+Werder Bremen
+Bremer SV
+Energie Cottbus
+SV Darmstadt 98
+Borussia Dortmund
+Dynamo Dresden
+Fortuna Düsseldorf
+SV Elversberg
+Rot-Weiss Essen
+Eintracht Frankfurt
+SC Freiburg
+SpVgg Greuther Fürth
+Greifswalder FC
+Hallescher FC
+Hamburger SV
+Hannover 96
+1. FC Heidenheim
+VfV 06 Hildesheim
+TSG Hoffenheim
+FC Ingolstadt 04
+Carl Zeiss Jena
+1. FC Kaiserslautern
+Karlsruher SC
+Holstein Kiel
+TuS Koblenz
+1. FC Köln
+RB Leipzig
+Bayer 04 Leverkusen
+Sportfreunde Lotte
+1. FC Phönix Lübeck
+1. FC Magdeburg
+1. FSV Mainz 05
+TSV Schott Mainz
+SV Meppen
+Bor. Mönchengladbach
+Bayern München
+Preußen Münster
+1. FC Nürnberg
+Kickers Offenbach
+VfL Osnabrück
+FC Teutonia Ottensen
+SC Paderborn 07
+Jahn Regensburg
+Hansa Rostock
+1. FC Saarbrücken
+SV Sandhausen
+FC Schalke 04
+FC St. Pauli
+VfB Stuttgart
+SSV Ulm 1846 Fußball
+FC 08 Villingen
+SV Wehen Wiesbaden
+VfL Wolfsburg
+Würzburger Kickers
+

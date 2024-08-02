@@ -10,8 +10,11 @@ datasets = ['cz',  # czech republic
             'bo',  # bolivia
             'ec',  # ecuador
             'py',  # paraguay
-            'fr',  # france
             'tr',  # turkey
+
+             'fr',  # france
+             'it', # italy
+             'es', # spain
 
             'at',  # austria
             'ch',  # switzerland +

@@ -44,15 +44,15 @@ FC Sion
   Sion
 
 
-FC Lugano	
+FC Lugano
 Grasshopper Club Zürich
-Yverdon Sport FC	
+Yverdon Sport FC
   Yverdon Sport Football Club
 
 
-FC Zürich	
+FC Zürich
 FC Winterthur
-	 Winterthur
+ Winterthur
 FC St. Gallen
   St. Gallen
 
@@ -62,7 +62,7 @@ BSC Young Boys
 
 
 FC Sion
-FC Lausanne-Sport	
+FC Lausanne-Sport
 FC Basel
 FC Luzern
 Servette FC
@@ -79,15 +79,15 @@ FC Baden
 ## challenge league
 
 
-Stade Nyonnais	
-FC Schaffhausen	
-FC Thun Berner Oberland	
+Stade Nyonnais
+FC Schaffhausen
+FC Thun Berner Oberland
 Stade-Lausanne-Ouchy
-AC Bellinzona	
+AC Bellinzona
 Etoile Carouge FC
-FC Aarau	
+FC Aarau
 Neuchâtel Xamax FCS
-FC Wil 1900	
+FC Wil 1900
 
 
 
@@ -152,24 +152,176 @@ FC Sion
 FC St. Gallen
 FC Thun Berner Oberland
 FC Tuggen
-FC Wettswil-Bonstetten	
-FC Widnau	
-FC Wil 1900	
-FC Winkeln St. Gallen	
-FC Winterthur	
-FC Zürich	
-Grasshopper Club Zürich	
-Iliria Solothurn	
+FC Wettswil-Bonstetten
+FC Widnau
+FC Wil 1900
+FC Winkeln St. Gallen
+FC Winterthur
+FC Zürich
+Grasshopper Club Zürich
+Iliria Solothurn
 Neuchâtel Xamax FCS
-SC Brühl	
-SC Cham	
-SC Kriens	
+SC Brühl
+SC Cham
+SC Kriens
 Servette FC
 SR Delémont
 Stade Nyonnais
 Stade-Lausanne-Ouchy
-SV Höngg	
-SV Schaffhausen	
-Vevey-Sports	
+SV Höngg
+SV Schaffhausen
+Vevey-Sports
 VfR Kleinhüningen
-Yverdon Sport FC	
+Yverdon Sport FC
+
+
+###
+# Schweiz Cup 2024/25
+
+FC Lancy
+Etoile Carouge FC
+FC Dardania Lausanne
+Yverdon Sport FC
+SC Kriens
+AC Bellinzona
+AC Taverne
+FC Wil 1900
+FC Wettswil-Bonstetten
+FC Winterthur
+FC Subingen
+FC Basel
+FC Baden
+FC Rapperswil-Jona
+FC Ursy
+Stade Nyonnais
+FC Schattdorf
+FC Paradiso
+FC Printse-Nendaz
+BSC Young Boys
+FC Suhr
+FC Aarau
+FC Echallens
+Stade-Lausanne-Ouchy
+FC Besa Biel/Bienne
+Chur 97
+FC Monthey
+FC Solothurn
+FC Wallbach
+FC Langenthal
+FC Tuggen
+FC Schaffhausen
+FC Mendrisio
+FC Luzern
+FC Aemme
+FC Haute-Ajoie
+FC CSL
+FC Prishtina Bern
+Zürich City SC
+SC YF/Juventus Zürich
+SC Emmen
+FC Altstätten
+FC Biel/Bienne
+Neuchâtel Xamax FCS
+SR Delémont
+FC Sion
+FC Genolier-Begnins
+Vevey-Sports
+Signal FC
+Servette FC
+FC Champel
+FC Lausanne-Sport
+SC Schwyz
+FC Thun Berner Oberland
+KF Dardania St. Gallen
+FC Gambarogno-Contone
+SC Brühl
+FC Lugano
+Zug 94
+FC Zürich
+FC Regensdorf
+Grasshopper Club Zürich
+FC Malcantone
+FC St. Gallen
+
+###
+#  more checks
+
+FC Aarau
+FC Aemme
+FC Altstätten
+FC Baden
+FC Basel
+AC Bellinzona
+FC Prishtina Bern
+Young Boys Bern
+FC Biel-Bienne
+SC Brühl
+Etoile Carouge FC
+FC Champel
+Chur 97
+FC Dardania Lausanne
+SR Delemont
+FC Echallens
+SC Emmen
+FC Gambarogno
+Servette Genf
+FC Genolier-Begnins
+FC Haute-Ajoie
+SC Kriens
+FC Lancy
+FC Langenthal
+FC Stade Lausanne Ouchy
+FC Lausanne-Sport
+Le Locle Sports
+FC Lugano
+FC Luzern
+AC Malcantone
+FC Mendrisio
+FC Monthey
+Neuchatel Xamax FCS
+Stade Nyonnais
+FC Paradiso
+FC Printse-Nendaz
+FC Rapperswil-Jona
+FC Regensdorf
+FC Schaffhausen
+FC Schattdorf
+SC Schwyz
+FC Signal
+FC Sion
+FC Solothurn
+Besa St. Gallen
+Dardania St. Gallen
+FC St. Gallen
+FC Subingen
+FC Suhr
+AC Taverne
+FC Thun
+FC Tuggen
+FC Ursy
+Vevey United
+FC Wallbach
+FC Wettswil-Bonstetten
+FC Wil 1900
+FC Winterthur
+Yverdon-Sport FC
+Zug 94
+Zürich City
+FC Zürich
+Grasshopper Club Zürich
+YF Juventus Zürich
+
+
+###
+# challenge league 2024/25
+
+
+FC Thun
+Etoile Carouge FC
+Stade Nyonnais
+AC Bellinzona
+FC Schaffhausen
+Neuchatel Xamax FCS
+FC Wil 1900
+FC Aarau
+FC Stade Lausanne Ouchy

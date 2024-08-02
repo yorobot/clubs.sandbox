@@ -99,3 +99,33 @@ FC Villefranche,  Villefranche-sur-Saône
   FC Villefranche Beaujolais
   FCVB
   Villefranche
+
+
+###
+#  check ligue 1 2024/25
+
+
+Angers SCO
+AJ Auxerre
+Stade Brest
+
+AC Le Havre
+  Le Havre AC
+  Le Havre
+
+RC Lens
+Lille OSC
+Olympique Lyon
+Olympique Marseille
+
+#  AS Monaco   -- move to monaco (not france)!!!
+
+Montpellier HSC
+FC Nantes
+OGC Nizza
+Paris St. Germain
+Stade Reims
+Stade Rennes
+AS St. Etienne
+Racing Straßburg
+FC Toulouse

@@ -1,0 +1,23 @@
+#####
+#  check la liga 2024/25
+
+Deportivo Alaves
+Espanyol Barcelona
+FC Barcelona
+Athletic Bilbao
+FC Getafe
+FC Girona
+UD Las Palmas
+CD Leganes
+Atletico Madrid
+Real Madrid
+RCD Mallorca
+CA Osasuna
+Real Sociedad San Sebastian
+FC Sevilla
+Real Betis Sevilla
+FC Valencia
+Real Valladolid
+Rayo Vallecano
+Celta Vigo
+FC Villarreal
