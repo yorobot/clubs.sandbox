@@ -20,7 +20,7 @@ paths.each_with_index do |path,i|
    ## next if code == 'uefa'   ### skip int'l for now
    ## next if league.index('cup')   ## skip cups for now
    ## next if code != 'uefa'
-   next if league == 'ch.cup'
+   ## next if league == 'ch.cup'
 
   puts
   puts "===> #{i+1}/#{paths.size}"
