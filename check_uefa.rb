@@ -2,32 +2,31 @@ require_relative 'boot'
 
 
 
+##  todo:
+##  collect duplicates too (instead of exit 1) !!!
 
-datasets = Dir.glob( "./uefa/**/*.csv")
+
+
+## datasets = Dir.glob( "./uefa/**/*.csv")
+datasets = Dir.glob( "./uefa/**/champ*.csv")
 puts "   #{datasets.size} datafile(s)"
 
 
-
-totals = Hash.new(0)
+missing_clubs =  {}
 
 datasets.each_with_index do |path,i|
 
-  basename = File.basename( path, File.extname( path ))
+  basename = File.basename( path, File.extname( path))
 
-  ## split by . at.1_2024/25_(16)
-  code = basename.split( '.' )[0]
-
-  country = Country.find_by( code: code )
   puts
   puts "===> #{i+1}/#{datasets.size}"
-  pp country
 
      recs = read_csv( path )
      puts "   #{recs.size} record(s)"
-  ###
-  ## todo - use unaccent to avoid duplicates with different accents/diacritics/etc.
-  missing_clubs = Hash.new(0)  ## index by league code
 
+
+## sort by code
+    recs = recs.sort { |l,r| l['code'] <=> r['code'] }
 
 
   recs.each_with_index do |rec,j|
@@ -35,13 +34,27 @@ datasets.each_with_index do |path,i|
     names = rec['names'].split( '|' )
     names  = names.map { |name| name.strip }
 
+    code  = rec['code']
+    country = Country.find_by( code: code )
+    if country.nil?
+      puts "!! ERROR - no country found for code:"
+      pp rec
+      exit 1
+    end
+
     names.each do |name|
 
       m = Club.match_by( name: name, country: country )
 
       if m.empty?
          puts "!! #{name}   -  #{names.join('|')}"
-         missing_clubs[ name ] += 1
+         missing_clubs[ code ] ||= {}
+         stat = missing_clubs[ code ][ name ] ||= { names: names,
+                                                    count: 0,
+                                                    files: []
+                                                  }
+         stat[ :count ] += 1
+         stat[ :files] << basename
       elsif m.size > 1
           puts
           puts "!! too many matches (#{m.size}) for club >#{name}<:"
@@ -54,37 +67,22 @@ datasets.each_with_index do |path,i|
           else
               print name
           end
+          print " (#{code})"
           print "\n"
       end
     end
-   end
-
-   if missing_clubs.size > 0
-     puts
-     pp missing_clubs
-     puts "  #{missing_clubs.size} record(s)"
-
-     puts
-     puts "---"
-     missing_clubs.each do |name, _|
-       puts name
-     end
-     puts
-
-     ## adding missing clubs for country to totals
-     totals[country.name] = missing_clubs
    end
 end
 
 
 
-if totals.size > 0
+if missing_clubs.size > 0
    puts
-   puts "totals:"
-   pp totals
+   puts "missing_clubs:"
+   pp missing_clubs
 
-   totals.each do |country_name, clubs|
-      puts "  #{clubs.size} club name(s) in #{country_name}"
+   missing_clubs.each do |code, clubs|
+      puts "  #{clubs.size} club name(s) in #{code}"
    end
 end
 
