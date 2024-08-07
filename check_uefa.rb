@@ -15,6 +15,10 @@ puts "   #{datasets.size} datafile(s)"
 
 missing_clubs =  {}
 
+
+duplicates = {}
+
+
 datasets.each_with_index do |path,i|
 
   basename = File.basename( path, File.extname( path))
@@ -72,7 +76,15 @@ datasets.each_with_index do |path,i|
           puts
           puts "!! too many matches (#{m.size}) for club >#{name}<:"
           pp m
-          exit 1
+
+          stat = duplicates[ name ] ||= { names: names,
+                                          count: 0,
+                                          matches: m,
+                                          files: []
+                                        }
+         stat[ :count ] += 1
+         stat[ :files] << basename
+         #  exit 1
       else  # bingo; match
           print "     OK "
           if name != m[0].name
@@ -99,5 +111,9 @@ if missing_clubs.size > 0
    end
 end
 
+
+puts
+puts "  #{duplicates.size } duplicat(es):"
+pp duplicates
 
 puts "bye"
