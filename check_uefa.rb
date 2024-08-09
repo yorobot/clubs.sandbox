@@ -7,9 +7,10 @@ require_relative 'boot'
 
 
 
-## datasets = Dir.glob( "./uefa/**/*.csv")
 ## datasets = Dir.glob( "./uefa/**/champ*.csv")
-datasets = Dir.glob( "./uefa/**/europa*.csv")
+## datasets = Dir.glob( "./uefa/**/europa*.csv")
+## datasets = Dir.glob( "./uefa/**/conf*.csv")
+datasets = Dir.glob( "./uefa/**/*.csv")
 puts "   #{datasets.size} datafile(s)"
 
 
@@ -41,16 +42,6 @@ datasets.each_with_index do |path,i|
 
     code  = rec['code']
 
-    ## quick fix for clubs in other country
-    # Derry City FC | Derry      -- IRL => NIR
-    # AS Monaco FC | Monaco      -- FRA => MON
-    # Swansea City AFC|Swansea   -- ENG => WAL
-
-    ## or use MCO for code (Monaco) - why? why not?
-    code = 'MON' if names.include?( 'AS Monaco FC' )
-    code = 'NIR' if names.include?( 'Derry City FC' )
-    code = 'WAL' if names.include?( 'Swansea City AFC' )
-
 
     country = Country.find_by( code: code )
     if country.nil?
@@ -61,7 +52,7 @@ datasets.each_with_index do |path,i|
 
     names.each do |name|
 
-      m = Club.match_by( name: name, country: country )
+      m = Club.match_by_and_autofix( name: name, country: country )
 
       if m.empty?
          puts "!! #{name}   -  #{names.join('|')}"

@@ -7,6 +7,11 @@ datasets = Dir.glob( "./uefa.national/**/*.csv")
 puts "   #{datasets.size} datafile(s)"
 
 
+MCO = Country.find_by( name: 'Monaco' )
+NIR = Country.find_by( name: 'Northern Ireland' )
+## pp MCO
+## pp NIR
+
 
 totals = Hash.new(0)
 
@@ -35,9 +40,10 @@ datasets.each_with_index do |path,i|
     names = rec['names'].split( '|' )
     names  = names.map { |name| name.strip }
 
+
     names.each do |name|
 
-      m = Club.match_by( name: name, country: country )
+      m = Club.match_by_and_autofix( name: name, country: country )
 
       if m.empty?
          puts "!! #{name}   -  #{names.join('|')}"

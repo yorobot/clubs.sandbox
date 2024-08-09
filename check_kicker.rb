@@ -28,7 +28,7 @@ paths.each_with_index do |path,i|
      puts "   #{recs.size} record(s)"
   ###
   ## todo - use unaccent to avoid duplicates with different accents/diacritics/etc.
- 
+
   if code == 'uefa'
      country = nil
   else
@@ -39,11 +39,11 @@ paths.each_with_index do |path,i|
   recs.each_with_index do |rec,j|
      name = rec['name']
 
-    m = Club.match_by( name: name, country: country )
+    m = Club.match_by_and_autofix( name: name, country: country )
 
     if m.empty?
        puts "!! #{name}"
-       stat = missing_clubs[ name ] ||= [0,[]] 
+       stat = missing_clubs[ name ] ||= [0,[]]
        ## up - count (integer) and season (array)
        stat[0] += 1
        stat[1] << "#{league}_#{season}"
@@ -55,7 +55,7 @@ paths.each_with_index do |path,i|
     else  # bingo; match
         print "     OK "
         if name != m[0].name
-            print "%-28s => %-28s" % [name, m[0].name] 
+            print "%-28s => %-28s" % [name, m[0].name]
         else
             print name
         end
