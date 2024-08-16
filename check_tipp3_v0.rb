@@ -2,7 +2,7 @@ require_relative 'boot'
 
 
 
-paths = Dir.glob( './tipp3/**/*.csv' )
+paths = Dir.glob( './tipp3_v0/**/*.csv' )
 puts "   #{paths.size} datasets(s)"
 
 
@@ -37,8 +37,7 @@ paths.each_with_index do |path,i|
   end
 
   recs.each_with_index do |rec,j|
-     name    = rec['name']
-     leagues = rec['leagues']
+     name = rec['name']
 
     if basename == 'uefa' || basename == 'copa'
          code = rec['code']
@@ -55,14 +54,13 @@ paths.each_with_index do |path,i|
     if m.empty?
        print "!! #{name}"
        print " - #{country.key} #{country.name} (#{country.code})"
-       print " -- #{leagues}"
        print "\n"
 
        missing_clubs[ country.name ] ||= {}
        stat = missing_clubs[ country.name ][ name ] ||= [0,[]]
        ## up - count (integer) and season (array)
        stat[0] += 1
-       stat[1] << "#{leagues}"
+       stat[1] << "#{basename}"
     elsif m.size > 1
         puts
         puts "!! too many matches (#{m.size}) for club >#{name}<:"
@@ -76,12 +74,10 @@ paths.each_with_index do |path,i|
             print name
         end
         print " - #{country.key} #{country.name} (#{country.code})"
-        print " -- #{leagues}"
         print "\n"
     end
   end
 end
-
 
 
 if missing_clubs.size > 0

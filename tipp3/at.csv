@@ -1,37 +1,85 @@
-name
-
-# 2018
-
-# League AUT 2 (1) - >Österreich Zweite Liga<:
-  Wack. Innsbruck II
-
-# League AUT RLO (3) - >Österreich Regionalliga Ost<:
-  St. Pölten Amat.
-  Marchfeld Donauaue
-  SC Parndorf
-
-# League AUT RLW (1) - >Österreich Regionalliga West<:
-  SK Bischofshofen
-
-
-# 2019
-# League AUT RLO (3) - >Österreich Regionalliga Ost<:
-  Marchfeld Donauaue
-  SC Parndorf
-  St. Pölten Amat.
-# League AUT CUP (1) - >Österreich ÖFB Cup<:
-  Marchfeld Donauaue
-
-
-# League RL TIR (2) - >Regionalliga Tirol<:
-  SC Imst 1933
-  Zirl
-
-# League AUT 2 (1) - >Österreich Zweite Liga<:
-  Wack. Innsbruck II
-
-# League AUT RLW (1) - >Österreich Regionalliga West<:
-  SK Bischofshofen
-
-# League AUT RLM (1) - >Österreich Regionalliga Mitte<:
-  SV Lendorf
+count,name,leagues
+53,FK Austria Wien,AUT BL (49)·AUT CUP (4)
+51,SK Rapid Wien,AUT BL (45)·AUT CUP (6)
+50,Austria Lustenau,AUT BL (46)·AUT CUP (3)·AUT 2 (1)
+50,SCR Altach,AUT BL (45)·AUT CUP (5)
+50,Wolfsberger AC,AUT BL (47)·AUT CUP (3)
+49,SK Sturm Graz,AUT BL (44)·AUT CUP (5)
+49,TSV Hartberg,AUT BL (46)·AUT CUP (3)
+48,Austria Klagenfurt,AUT BL (45)·AUT CUP (3)
+48,LASK,AUT BL (44)·AUT CUP (4)
+48,RB Salzburg,AUT BL (44)·AUT CUP (4)
+47,WSG Tirol,AUT BL (45)·AUT CUP (2)
+46,BW Linz,AUT 2 (2)·AUT BL (41)·AUT CUP (3)
+39,Grazer AK,AUT 2 (33)·AUT CUP (4)·AUT BL (2)
+39,SV Ried,AUT BL (3)·AUT CUP (3)·AUT 2 (33)
+38,SKN St. Pölten,AUT 2 (33)·AUT CUP (5)
+37,First Vienna FC,AUT 2 (34)·AUT CUP (3)
+37,Floridsdorfer AC,AUT 2 (34)·AUT CUP (3)
+37,Kapfenberger SV,AUT 2 (33)·AUT CUP (4)
+36,DSV Leoben,AUT 2 (31)·AUT CUP (5)
+36,SKU Amstetten,AUT 2 (32)·AUT CUP (4)
+36,SV Horn,AUT 2 (34)·AUT CUP (2)
+36,SV Lafnitz,AUT 2 (33)·AUT CUP (3)
+35,Admira Wacker,AUT 2 (33)·AUT CUP (2)
+35,FC Dornbirn,AUT 2 (33)·AUT CUP (2)
+34,FC Liefering,AUT 2 (34)
+34,SK Sturm Graz II,AUT 2 (34)
+34,SV Stripfing,AUT CUP (3)·AUT 2 (31)
+34,SW Bregenz,AUT CUP (2)·AUT 2 (32)
+26,Wiener Sport-Club,AUT RLO (26)
+25,Kremser SC,AUT CUP (2)·AUT RLO (23)
+25,SK Rapid Wien II,AUT 2 (3)·AUT RLO (22)
+24,Young Violets A.W.,AUT 2 (2)·AUT RLO (22)
+23,SK Vorwärts Steyr,AUT 2 (2)·AUT CUP (1)·AUT RLM (20)
+20,FC Marchfeld,AUT RLO (18)·AUT CUP (2)
+20,SV Oberwart,AUT CUP (2)·AUT RLO (18)
+18,TWL Elektra,AUT CUP (1)·AUT RLO (17)
+17,Favoritner AC,AUT RLO (17)
+17,SC Neusiedl,AUT CUP (2)·AUT RLO (15)
+16,FCM Traiskirchen,AUT RLO (14)·AUT CUP (2)
+13,SR Donaufeld,AUT RLO (12)·AUT CUP (1)
+13,Wiener Viktoria,AUT RLO (12)·AUT CUP (1)
+12,Union Gurten,AUT RLM (9)·AUT CUP (3)
+11,ASK Voitsberg,AUT CUP (2)·AUT RLM (8)·AUT 2 (1)
+11,ASV Draßburg,AUT CUP (3)·AUT RLO (8)
+11,Deutschlandsberg,AUT RLM (9)·AUT CUP (2)
+11,SPG Hertha Wels,AUT RLM (9)·AUT CUP (2)
+11,SV Allerheiligen,AUT RLM (11)
+9,SC Weiz,AUT RLM (7)·AUT CUP (2)
+9,SV Leobendorf,AUT CUP (2)·AUT RLO (7)
+8,Bad Gleichenberg,AUT RLM (7)·AUT CUP (1)
+8,SV Wallern,AUT RLM (7)·AUT CUP (1)
+8,St. Anna am Aigen,AUT RLM (6)·AUT CUP (2)
+7,FC Gleisdorf,AUT RLM (7)
+7,LASK Amateure OÖ,AUT RLM (7)
+7,SCU Ardagger,AUT RLO (7)
+5,Union Vöcklamarkt,AUT RLM (5)
+4,ASK Klagenfurt,AUT RLM (4)
+4,Pinzgau Saalfelden,AUT CUP (3)·AUT RLW (1)
+4,SC Imst 1933,AUT CUP (3)·AUT RLW (1)
+3,Austria Salzburg,AUT CUP (3)
+3,SC Schwaz,AUT RLW (2)·AUT CUP (1)
+3,SVG Reichenau,AUT CUP (2)·AUT RLW (1)
+3,VfB Hohenems,AUT CUP (2)·AUT RLW (1)
+2,ASV Siegendorf,AUT CUP (1)·AUT RLO (1)
+2,FC Mauerwerk,AUT RLO (2)
+2,SK Bischofshofen,AUT CUP (2)
+2,SK Treibach,AUT RLM (1)·AUT CUP (1)
+2,SV Gloggnitz,AUT CUP (1)·AUT RLO (1)
+2,SV Ried II,AUT RLM (2)
+2,SV Wals-Grünau,AUT RLW (1)·AUT CUP (1)
+1,ASKÖ Oedt,AUT CUP (1)
+1,ATUS Velden,AUT CUP (1)
+1,Dietach,AUT CUP (1)
+1,FC Kitzbühel,AUT CUP (1)
+1,FC Wolfurt,AUT CUP (1)
+1,Köttmannsdorf,AUT CUP (1)
+1,SC Korneuburg,AUT CUP (1)
+1,SC Parndorf,AUT CUP (1)
+1,SC Röthis,AUT CUP (1)
+1,SV Donau,AUT CUP (1)
+1,SV Haitzendorf,AUT CUP (1)
+1,TSV St. Johann,AUT RLW (1)
+1,WAC Amateure,AUT RLM (1)
+1,Wildon SV,AUT CUP (1)

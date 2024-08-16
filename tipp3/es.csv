@@ -1,22 +1,57 @@
-name
-
-# 2018
-
-# League ESP 2 (2) - >Spanien Segunda Division<:
-  Gimn. Tarragona
-  R. Majadahonda
-
-# League ESP CUP (9) - >Spanien Copa del Rey<:
-  CD Ebro
-  UE Sant Andreu
-  CF Villanovense
-  Union Mutilvera
-  CD Calahorra
-  La Hoya Lorca CF
-  Ontinyent CF
-  R. Majadahonda
-  Gimn. Tarragona
-# League ESP 2 (2) - >Spanien Segunda Division<:
-  Gimn. Tarragona
-  R. Majadahonda
-
+count,name,leagues
+48,Atletico Madrid,ESP 1 (42)·ESP CUP (5)·ESP SC (1)
+47,Athletic Bilbao,ESP 1 (41)·ESP CUP (6)
+46,FC Barcelona,ESP 1 (41)·ESP CUP (3)·ESP SC (2)
+46,RCD Mallorca,ESP 1 (40)·ESP CUP (6)
+46,Real Sociedad,ESP 1 (41)·ESP CUP (5)
+45,FC Girona,ESP 1 (41)·ESP CUP (4)
+45,FC Sevilla,ESP 1 (42)·ESP CUP (3)
+45,Real Madrid,ESP 1 (41)·ESP CUP (2)·ESP SC (2)
+44,FC Valencia,ESP 1 (42)·ESP CUP (2)
+44,Getafe CF,ESP 1 (41)·ESP CUP (3)
+43,Betis Sevilla,ESP 1 (41)·ESP CUP (2)
+43,Villarreal CF,ESP 1 (41)·ESP CUP (2)
+42,CD Alaves,ESP 2 (4)·ESP 1 (36)·ESP CUP (2)
+42,Celta de Vigo,ESP 1 (39)·ESP CUP (3)
+41,CA Osasuna,ESP 1 (39)·ESP SC (1)·ESP CUP (1)
+41,Rayo Vallecano,ESP 1 (40)·ESP CUP (1)
+40,Cadiz CF,ESP 1 (39)·ESP CUP (1)
+38,UD Almeria,ESP 1 (38)
+37,Granada CF,ESP 1 (37)
+37,UD Las Palmas,ESP 2 (1)·ESP 1 (35)·ESP CUP (1)
+25,Espanyol Barcelona,ESP 1 (3)·ESP 2 (20)·ESP CUP (2)
+22,Real Oviedo,ESP 2 (21)·ESP CUP (1)
+19,Real Valladolid,ESP 1 (3)·ESP 2 (15)·ESP CUP (1)
+19,SD Eibar,ESP 2 (17)·ESP CUP (2)
+18,Real Saragossa,ESP 2 (18)
+17,CD Leganes,ESP 2 (16)·ESP CUP (1)
+17,Elche CF,ESP 1 (3)·ESP 2 (12)·ESP CUP (2)
+17,Levante UD,ESP 2 (16)·ESP CUP (1)
+17,Teneriffa CD,ESP 2 (16)·ESP CUP (1)
+14,CD Eldense,ESP 2 (14)
+14,FC Cartagena,ESP 2 (13)·ESP CUP (1)
+14,Racing Santander,ESP 2 (14)
+13,Albacete Balompie,ESP 2 (13)
+13,Andorra FC,ESP 2 (13)
+13,Burgos CF,ESP 2 (12)·ESP CUP (1)
+13,CF Villarreal B,ESP 2 (13)
+13,Sporting Gijon,ESP 2 (13)
+12,Alcorcon AD,ESP 2 (12)
+12,Racing de Ferrol,ESP 2 (10)·ESP CUP (2)
+11,CD Mirandes,ESP 2 (11)
+11,SD Huesca,ESP 2 (11)
+10,SD Amorebieta,ESP 2 (9)·ESP CUP (1)
+2,Arandina CF,ESP CUP (2)
+2,Unionistas CF,ESP CUP (2)
+1,Atzeneta UE,ESP CUP (1)
+1,CD Castellon,ESP CUP (1)
+1,CD Linares,ESP CUP (1)
+1,CD Lugo,ESP CUP (1)
+1,CD Tudelano,ESP CUP (1)
+1,CF Villanovense,ESP CUP (1)
+1,Malaga CF,ESP CUP (1)
+1,Melilla UD,ESP CUP (1)
+1,Orihuela CF,ESP CUP (1)
+1,Sestao River Club,ESP CUP (1)
+1,UD Barbastro,ESP CUP (1)
+1,Zamora CF,ESP CUP (1)

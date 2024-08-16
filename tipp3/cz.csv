@@ -1,24 +1,35 @@
-name
-
-# 2020
-# League CZE 2 (9) - >Tschechien 1. Division<:
-  FK Fotbal Trinec
-  Pardubice
-  AFK Chrudim
-  FC Graffin Vlasim
-  1.SK Prostejov
-  FK Varnsdorf
-  FK Slavoj Vysehrad
-  FK Banik Sokolov
-  SK Lisen
-
-# 2019
-# League CZE 2 (8) - >Tschechien 1. Division<:
-  1. SC Znojmo
-  MAS Taborsko
-  FC Graffin Vlasim
-  1.SK Prostejov
-  FK Banik Sokolov
-  FK Fotbal Trinec
-  FK Varnsdorf
-  Pardubice
+count,name,leagues
+9,Sparta Prag,CZE 1 (7)·CZE CUP (2)
+9,Viktoria Pilsen,CZE 1 (5)·CZE CUP (4)
+6,FC Fastav Zlin,CZE 1 (4)·CZE CUP (2)
+6,FK Baumit Jablonec,CZE 1 (4)·CZE CUP (2)
+6,SK Sigma Olmütz,CZE 1 (5)·CZE CUP (1)
+5,FK Dukla Prag,CZE 2 (3)·CZE 1 (2)
+5,MFK Karvina,CZE 2 (1)·CZE 1 (4)
+5,SK Dynamo Budweis,CZE 1 (5)
+5,SK Slavia Prag,CZE 1 (4)·CZE CUP (1)
+4,1. FC Slovacko,CZE 1 (4)
+4,FC Banik Ostrava,CZE 1 (4)
+4,FC Zbrojovka Brno,CZE 1 (1)·CZE 2 (3)
+4,FK Mlada Boleslav,CZE 1 (4)
+4,Pardubice,CZE 1 (4)
+3,AFK Chrudim,CZE 2 (3)
+3,Bohem.Prag 1905,CZE 1 (3)
+3,FC Graffin Vlasim,CZE 2 (3)
+3,FK Teplice,CZE 1 (3)
+3,FK Varnsdorf,CZE 2 (3)
+3,FK Viktoria Zizkov,CZE CUP (1)·CZE 2 (2)
+3,MFK Vyskov,CZE 2 (2)·CZE 1 (1)
+2,1.SK Prostejov,CZE 2 (2)
+2,FC Hradec Kralove,CZE 1 (2)
+2,FC Jihlava,CZE 2 (2)
+2,FC Slovan Liberec,CZE 1 (1)·CZE CUP (1)
+2,SFC Opava,CZE 2 (2)
+2,SK Lisen Brno,CZE 2 (2)
+1,1. FK Pribram,CZE 2 (1)
+1,AC Sparta Prag B,CZE 2 (1)
+1,FK Fotbal Trinec,CZE 2 (1)
+1,FK Taborsko,CZE 1 (1)
+1,MAS Taborsko,CZE 2 (1)
+1,SK Hanacka Slavia,CZE 2 (1)
+1,SK Sigma Olmütz B,CZE 2 (1)

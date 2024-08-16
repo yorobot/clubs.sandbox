@@ -1,12 +1,15 @@
-name
-
-# 2018
-#  League PAR 1 (3) - >Paraguay Primera Division<:
-  Olimpia Asuncion
-  Guarani Asuncion
-  CA 3 DE Febrero
-
-# League PAR 1 (3) - >Paraguay Primera Division<:
-  Olimpia Asuncion
-  Nacional Asuncion
-  Guarani Asuncion
+count,name,leagues
+5,Tacuary Asuncion,PAR 1 (5)
+4,Sol de America,PAR 1 (4)
+4,Sportivo Ameliano,PAR 1 (4)
+4,Sportivo Luqueno,PAR 1 (4)
+3,Gen.Caballero JLM,PAR 1 (3)
+3,Guarani Asuncion,PAR 1 (3)
+3,Nacional Asuncion,PAR 1 (3)
+2,Club Libertad,PAR 1 (2)
+2,Olimpia Asuncion,PAR 1 (2)
+2,Sportivo Trinidens,PAR 1 (2)
+1,CS 2 DE Mayo,PAR 1 (1)
+1,Club Cerro Porteno,PAR 1 (1)
+1,Guairena FC,PAR 1 (1)
+1,Resistencia FC,PAR 1 (1)

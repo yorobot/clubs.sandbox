@@ -1,49 +1,49 @@
-name
-
-# 2020
-# League JPN 2 (13) - >Japan J.League 2<:
-  JEF Utd Ichihara
-  Kyoto Sanga FC
-  Mito Hollyhock
-  Niigata Albirex
-  Renofa Yamaguchi
-  Giravanz Kitakyush
-  Zweigen Kanazawa
-  Ehime FC
-  Thespakusatsu
-  Machida Zelvia
-  FC Ryukyu
-  Tochigi SC
-  Fagiano Okayama
-
-# 2019
-# League JPN 2 (13) - >Japan J.League 2<:
-  Zweigen Kanazawa
-  Kyoto Sanga FC
-  Kagoshima United
-  Ehime FC
-  Machida Zelvia
-  Niigata Albirex
-  Fagiano Okayama
-  Mito Hollyhock
-  FC Ryukyu
-  JEF Utd Ichihara
-  Renofa Yamaguchi
-  FC Gifu
-  Tochigi SC
-
-# 2020
-# League JPN 2 (13) - >Japan J.League 2<:
-  JEF Utd Ichihara
-  Kyoto Sanga FC
-  Mito Hollyhock
-  Niigata Albirex
-  Renofa Yamaguchi
-  Giravanz Kitakyush
-  Zweigen Kanazawa
-  Ehime FC
-  Thespakusatsu
-  Machida Zelvia
-  FC Ryukyu
-  Tochigi SC
-  Fagiano Okayama
+count,name,leagues
+8,Sanfr. Hiroshima,JPN 1 (5)·JPN CUP (2)·JPN LC (1)
+8,Urawa RD,JPN 1 (5)·JPN CUP (1)·JPN LC (2)
+6,Avispa Fukuoka,JPN LC (2)·JPN 1 (3)·JPN CUP (1)
+6,FC Tokyo,JPN CUP (2)·JPN LC (2)·JPN 1 (2)
+6,Gamba Osaka,JPN LC (1)·JPN 1 (4)·JPN CUP (1)
+6,Kashima Antlers,JPN CUP (2)·JPN LC (1)·JPN 1 (3)
+6,Nagoya Grampus,JPN CUP (1)·JPN LC (3)·JPN 1 (2)
+6,Tokyo Verdy,JPN 2 (1)·JPN CUP (2)·JPN 1 (3)
+6,Vissel Kobe,JPN CUP (3)·JPN 1 (3)
+6,Yokohama F Marinos,JPN CUP (1)·JPN LC (2)·JPN 1 (3)
+5,Jubilo Iwata,JPN 2 (2)·JPN CUP (1)·JPN 1 (2)
+5,Kawasaki Frontale,JPN CUP (2)·JPN 1 (3)
+5,Shonan Bellmare,JPN 1 (4)·JPN CUP (1)
+4,Cerezo Osaka,JPN CUP (2)·JPN LC (1)·JPN 1 (1)
+4,Kashiwa Reysol,JPN 1 (3)·JPN LC (1)
+4,Kyoto Sanga FC,JPN 1 (3)·JPN CUP (1)
+4,Machida Zelvia,JPN 2 (1)·JPN CUP (1)·JPN LC (1)·JPN 1 (1)
+4,Mito Hollyhock,JPN 2 (1)·JPN CUP (3)
+4,Ventforet Kofu,JPN 2 (2)·JPN CUP (2)
+3,Albirex Niigata,JPN 1 (2)·JPN CUP (1)
+3,Hokkaido Consadole,JPN LC (1)·JPN 1 (2)
+3,Montedio Yamagata,JPN 2 (1)·JPN CUP (2)
+3,Oita Trinita,JPN 2 (1)·JPN CUP (2)
+3,Roasso Kumamoto,JPN CUP (2)·JPN 2 (1)
+3,Sagan Tosu,JPN 1 (2)·JPN CUP (1)
+3,Shimizu S-Pulse,JPN 2 (2)·JPN CUP (1)
+3,Tokushima Vortis,JPN 2 (1)·JPN CUP (2)
+3,Vegalta Sendai,JPN 2 (1)·JPN CUP (2)
+2,Blaublitz Akita,JPN 2 (2)
+2,Ehime FC,JPN CUP (2)
+2,Fagiano Okayama,JPN 2 (1)·JPN CUP (1)
+2,Fujieda Myfc,JPN 2 (1)·JPN CUP (1)
+2,Iwaki FC,JPN 2 (1)·JPN CUP (1)
+2,JEF Utd Ichihara,JPN 2 (1)·JPN CUP (1)
+2,Omiya Ardija,JPN 2 (1)·JPN CUP (1)
+2,Renofa Yamaguchi,JPN 2 (1)·JPN CUP (1)
+2,Thespakusatsu,JPN 2 (1)·JPN CUP (1)
+2,Tochigi SC,JPN 2 (1)·JPN CUP (1)
+2,V-Varen Nagasaki,JPN 2 (1)·JPN CUP (1)
+2,Yokohama FC,JPN CUP (2)
+1,FC Ryukyu,JPN CUP (1)
+1,Hokkaido Consadol,JPN CUP (1)
+1,Iwate Grulla Morio,JPN CUP (1)
+1,Kagoshima United,JPN CUP (1)
+1,Nagano Parceiro,JPN CUP (1)
+1,Tegevajaro Miyazak,JPN CUP (1)
+1,Yokohama FM,JPN CUP (1)
+1,Zweigen Kanazawa,JPN 2 (1)

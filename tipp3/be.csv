@@ -1,29 +1,26 @@
-name
-
-#####
-# 2020
-# League BEL 2 (2) - >Belgium Tweede Klasse<:
-  MSK Deinze
-  KFC Oosterzonen
-
-####
-# 2019
-# League BEL 1 (1) - >Belgien Jupiler Pro League<:
-  Beerschot Wilrijk
-
-# League BEL 2 (2) - >Belgium Tweede Klasse<:
-  Beerschot Wilrijk
-  FC Tubize
-
-####
-# 2018
-# League BEL CUP (1) - >Belgium Beker van Belgie<:
-  Beerschot Wilrijk
-
-# 2019
-# League BEL 2 (2) - >Belgium Tweede Klasse<:
-  Beerschot Wilrijk
-  FC Tubize
-# League BEL 1 (1) - >Belgien Jupiler Pro League<:
-  Beerschot Wilrijk
-
+count,name,leagues
+26,KRC Genk,BEL 1 (25)·BEL CUP (1)
+25,Royal Antwerpen,BEL SC (1)·BEL 1 (18)·BEL CUP (6)
+24,Club Brügge,BEL 1 (18)·BEL CUP (5)·BEL SC (1)
+24,Saint Gilloise,BEL 1 (17)·BEL CUP (6)·BEL SC (1)
+23,Standard Lüttich,BEL 1 (22)·BEL CUP (1)
+22,KVC Westerlo,BEL 1 (22)
+21,RSC Anderlecht,BEL 1 (18)·BEL CUP (3)
+19,KAA Gent,BEL 1 (17)·BEL CUP (2)
+19,St. Truiden VV,BEL 1 (18)·BEL CUP (1)
+18,Sporting Charleroi,BEL 1 (17)·BEL CUP (1)
+16,Cercle Brügge,BEL 1 (15)·BEL CUP (1)
+14,YR KV Mechelen,BEL SC (1)·BEL 1 (13)
+12,OH Leuven,BEL 1 (10)·BEL CUP (2)
+10,KV Kortrijk,BEL 1 (10)
+8,AS Eupen,BEL 1 (8)
+8,RWD Molenbeek,BEL 1 (7)·BEL CUP (1)
+4,Beerschot VA,BEL CUP (1)·BEL 2 (1)·BEL 1 (2)
+4,KV Oostende,BEL CUP (4)
+3,FCV Dender EH,BEL 2 (1)·BEL 1 (2)
+3,Lommel SK,BEL 2 (1)·BEL 1 (2)
+3,SV Zulte Waregem,BEL CUP (2)·BEL 1 (1)
+1,KMSK Deinze,BEL 1 (1)
+1,Patro Eisden,BEL 1 (1)
+1,RFC Seraing,BEL 2 (1)
+1,SK Beveren,BEL CUP (1)

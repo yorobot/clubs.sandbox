@@ -1,16 +1,31 @@
-name
-
-# 2020
-# League HUN 2 (12) - >Ungarn NB II<:
-  FC Dorogi
-  Soroksar SC
-  Budaörsi SC
-  Aqvital FC Csákvár
-  Szeged-Csanad Gros
-  Nyiregyhaza FC
-  Kazincbarcikai SC
-  FC Ajka
-  Haladas Szombat.
-  Szolnoki Mav FC
-  Gyirmot SE
-  SC Vasas Budapest
+count,name,leagues
+7,Ferencvaros,HUN 1 (3)·HUN CUP (4)
+6,Kisvarda,HUN 1 (4)·HUN CUP (2)
+6,Paksi FC,HUN 1 (2)·HUN CUP (4)
+5,MTK Budapest FC,HUN 1 (4)·HUN CUP (1)
+4,Debreceni VSC,HUN 1 (3)·HUN CUP (1)
+4,Diosgyör VTK,HUN 1 (2)·HUN CUP (2)
+4,Kecskemeti TE,HUN 1 (3)·HUN CUP (1)
+4,Ujpest FC,HUN 1 (3)·HUN CUP (1)
+4,Zalaegerszegi TE,HUN 1 (3)·HUN CUP (1)
+3,Fehervar FC,HUN 1 (3)
+3,Mezokovesd Zsory,HUN 1 (3)
+3,Nyiregyhaza FC,HUN 2 (1)·HUN CUP (2)
+3,Puskas Akademia FC,HUN 1 (3)
+3,SC Vasas Budapest,HUN 2 (2)·HUN CUP (1)
+2,Haladas Szombat.,HUN 2 (2)
+1,Aqvital FC Csákvár,HUN 2 (1)
+1,BFC Siofok,HUN 2 (1)
+1,BVSC-Zuglo,HUN 2 (1)
+1,Budafoki MTE,HUN 2 (1)
+1,FC Ajka,HUN 2 (1)
+1,Gyirmot SE,HUN 2 (1)
+1,Győri ETO FC,HUN 2 (1)
+1,Honved Budapest,HUN 2 (1)
+1,Kazincbarcikai SC,HUN 2 (1)
+1,Kozarmisleny SE,HUN 2 (1)
+1,Mosonmagyarovari T,HUN 2 (1)
+1,Pecsi MFC,HUN 2 (1)
+1,Soroksar SC,HUN 2 (1)
+1,Szeged-Csanad Gros,HUN 2 (1)
+1,Tiszakecskei LC,HUN 2 (1)
