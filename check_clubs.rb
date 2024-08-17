@@ -3,8 +3,8 @@ require_relative 'boot'
 
 
 
-datasets = ['cz',  # czech republic 
-            'co',  # columbia 
+datasets = ['cz',  # czech republic
+            'co',  # columbia
             'eg',  # egypt
             'il',  # isreal
             'bo',  # bolivia
@@ -30,14 +30,14 @@ datasets.each_with_index do |code,i|
   puts
   puts "===> #{i+1}/#{datasets.size}"
   pp country
- 
-     txt = read_data( "more_clubs/#{code}.txt" )
+
+     txt = read_data( "./clubs/#{code}.txt" )
      puts "   #{txt.size} record(s)"
   ###
   ## todo - use unaccent to avoid duplicates with different accents/diacritics/etc.
   missing_clubs = Hash.new(0)  ## index by league code
 
-  
+
 
   txt.each_with_index do |(name,_),j|
 
@@ -54,7 +54,7 @@ datasets.each_with_index do |code,i|
     else  # bingo; match
         print "     OK "
         if name != m[0].name
-            print "%-28s => %-28s" % [name, m[0].name] 
+            print "%-28s => %-28s" % [name, m[0].name]
         else
             print name
         end
@@ -76,14 +76,14 @@ datasets.each_with_index do |code,i|
      puts
 
      ## adding missing clubs for country to totals
-     totals[country.name] = missing_clubs 
+     totals[country.name] = missing_clubs
    end
 end
 
 
 
 if totals.size > 0
-   puts 
+   puts
    puts "totals:"
    pp totals
 

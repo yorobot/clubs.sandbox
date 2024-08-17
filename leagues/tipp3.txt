@@ -1,0 +1,23 @@
+
+Schweden Allsvenskan   # SWE 1
+Schweden Superettan    # SWE 2
+Schweden Div 1 Södra   # SWE 3S
+Schweden Div 1 Norra   # SWE 3N
+
+Schweden - Allsvenskan  
+Schweden - Superettan   
+Schweden - Div 1 Södra  
+Schweden - Div 1 Norra  
+
+
+
+Finnland Veikkausliiga  # FIN 1
+Finnland Ykkosliiga     # FIN 2
+Finnland Ykkonen        # FIN 3
+
+Island Cup        # ISL CUP
+Island 2. Liga    # ISL 2
+
+
+Norwegen Adeccoligaen   # NOR 2
+

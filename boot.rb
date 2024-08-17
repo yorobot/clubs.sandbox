@@ -19,7 +19,7 @@ require 'cocos'
 
 Country = Sports::Country  # or SportDb::Import::Country or WorldDB ???
 Club    = Sports::Club     # or SportDb::Import::Club
-
+League  = Sports::League
 
 
 

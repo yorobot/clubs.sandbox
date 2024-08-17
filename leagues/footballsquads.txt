@@ -1,0 +1,64 @@
+##
+#  https://www.footballsquads.co.uk/squads.htm
+
+
+England Premier League
+England Football League Championship
+England Football League One
+England Football League Two
+England National League
+England - Premier League
+England - Football League Championship
+England - Football League One
+England - Football League Two
+England - National League
+
+Spain La Liga
+Spain La Liga 2   
+
+Germany Bundesliga
+Germany 2. Bundesliga
+
+Italy Serie A
+Italy Serie B	
+
+France Ligue 1
+France Ligue 2
+
+Scotland Premiership	 
+Scotland Championship
+
+Portugal Primeira Liga
+
+Netherlands Eredivisie
+
+Belgium Pro League
+
+Turkey Süper Lig
+
+Greece Super League
+
+Russia Premier League
+
+Ukraine Premier League
+
+Poland Ekstraklasa
+
+Denmark Superliga
+
+Austria Bundesliga
+
+Switzerland Super League
+
+Czech Republic 1. Liga
+
+Croatia 1. HNL
+
+Hungary Nemzeti Bajnokság I
+
+Norway Eliteserien
+
+Sweden Allsvenskan
+
+Ireland Premier Division
+
