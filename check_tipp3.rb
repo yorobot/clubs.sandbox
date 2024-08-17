@@ -28,8 +28,8 @@ paths.each_with_index do |path,i|
 
   country = nil
 
-  if basename == 'uefa' || basename == 'copa'
-     country = nil
+  if basename == 'intl'   ## note skip intl/international dataset for now
+     next
   else
      code = basename
      country = Country.find_by( code: code )
