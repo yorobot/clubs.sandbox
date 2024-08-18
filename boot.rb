@@ -27,6 +27,10 @@ LIE = Country.find_by( name: 'Liechtenstein' )
 MCO = Country.find_by( name: 'Monaco' )
 NIR = Country.find_by( name: 'Northern Ireland' )
 WAL = Country.find_by( name: 'Wales' )
+CAN = Country.find_by( name: 'Canada' )
+USA = Country.find_by( name: 'United States' )
+ESP = Country.find_by( name: 'Spain' )
+AND = Country.find_by( name: 'Andorra' )
 
 class Club
    def self.match_by_and_autofix( name:, country: )
@@ -36,14 +40,25 @@ class Club
           country = LIE  if country.code == 'SUI' &&
                             ['FC Vaduz'].include?( name )
           country = MCO  if country.code == 'FRA' &&
-                            ['AS Monaco',
-                             'AS Monaco FC',
+                            ['AS Monaco FC',
+                             'AS Monaco',
                              'Monaco'].include?( name )
           country = NIR  if country.code == 'IRL' &&
-                            ['Derry City FC','Derry'].include?( name )
+                            ['Derry City FC','Derry',
+                             'FC Derry City'].include?( name )
           country = WAL  if country.code == 'ENG' &&
-                            ['Swansea City AFC','Swansea'].include?( name )
+                            ['Swansea City AFC','Swansea',
+                             'Swansea City',
+                             'Cardiff City',
+                             'Newport County'].include?( name )
+          country = CAN  if country.code == 'USA'&&
+                            ['CF Montreal',
+                             'FC Toronto',
+                             "Vancouver W'caps"].include?( name )
+          country = AND  if country.code == 'ESP' &&
+                            ['Andorra FC'].include?( name )
         end
+
 
         match_by( name:     name,
                   country:  country )

@@ -40,17 +40,8 @@ paths.each_with_index do |path,i|
      name    = rec['name']
      leagues = rec['leagues']
 
-    if basename == 'uefa' || basename == 'copa'
-         code = rec['code']
-         ## split by () and get country name
-         ## pp rec
-         code = code.split('(')[0].strip
-         ## pp code
-         country = Country.find_by( name: code )
-         ## pp country
-    end
-
-    m = Club.match_by( name: name, country: country )
+    ## m = Club.match_by( name: name, country: country )
+    m = Club.match_by_and_autofix( name: name, country: country )
 
     if m.empty?
        print "!! #{name}"
