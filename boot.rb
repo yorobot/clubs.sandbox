@@ -2,7 +2,8 @@ $LOAD_PATH.unshift( '../../sportdb/sport.db/sportdb-langs/lib' )
 $LOAD_PATH.unshift( '../../sportdb/sport.db/sportdb-structs/lib' )
 $LOAD_PATH.unshift( '../../sportdb/sport.db/sportdb-formats/lib' )
 $LOAD_PATH.unshift( '../../sportdb/sport.db/sportdb-catalogs/lib' )
-require 'sportdb/catalogs'
+$LOAD_PATH.unshift( '../../sportdb/sport.db/sportdb-search/lib' )
+require 'sportdb/search'
 
 SportDb::Import.config.catalog_path = '../../sportdb/sport.db/catalog/catalog.db'
 

@@ -12,6 +12,10 @@ class ClubLinter
     headings = []
     clubs   = nil   ## current clubs array   ## note: same as headings[-1][1]
 
+    ## note - normalize txt
+    ##   replace all tabs (\t) with spaces
+    txt = txt.gsub( "\t", ' ' )
+
 
     OutlineReader.parse( txt ).each do |node|
       if [:h1,:h2,:h3,:h4,:h5,:h6].include?( node[0] )
@@ -56,9 +60,11 @@ class ClubLinter
           else
              ## check if starts with number e.g.   1   Liverpool
              ## todo/fix - require two space after number - why? why not?
-             line = line.sub( /^[0-9]{1,3}[ ]+/, '' )   if line =~ /^[0-9]{1,3}[ ]+/
+             line = line.sub( /^[0-9]{1,3}[ ]{2,}/, '' )   if line =~ /^[0-9]{1,3}[ ]{2,}/
 
-             values = line.split( '@' )   ## allow (optinal) geos as 2nd part in line for now
+             ## allow (optinal) geos as 2nd part in line for now
+             ##   use @ or ,
+             values = line.split( /[@,]/, 2 )
              names = parse_names( values[0] )
 
              club = { names: [],

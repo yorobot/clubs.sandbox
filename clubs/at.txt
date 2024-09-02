@@ -1,35 +1,36 @@
+= Austria =
 
 ## austrian bundesliga - add season 2024/25 !!
 
 
 Grazer AK
-  GAK
+  | GAK
 
 RB Salzburg
 SCR Altach
-  Altach
+  | Altach
 WSG Tirol
-  Tirol
+  | Tirol
 
 TSV Hartberg
-  Hartberg 
+  | Hartberg
 LASK
 Wolfsberger AC
-  WAC
+  | WAC
 SK Austria Klagenfurt
 
 Rapid Wien
-  SK Rapid Wien
+  | SK Rapid Wien
 
 Sturm Graz
-  Sturm
+  | Sturm
 
 FC Blau Weiß Linz
-  BW Linz
+  | BW Linz
 
 Austria Wien
-  FK Austria Wien
-  FAK
+  | FK Austria Wien
+  | FAK
 
 
 ###############
@@ -48,7 +49,7 @@ Sturm Graz (A)
 
 FC Liefering
 First Vienna FC
-  Vienna
+  | Vienna
 ASK Voitsberg
 SKU Amstetten
 SV Stripfing/Weiden
@@ -56,12 +57,12 @@ SV Ried
 SV Horn
 FC Admira Wacker
 Kapfenberger SV 1919
-  KSV
+  | KSV
 Austria Lustenau
 SV Lafnitz
 Schwarz-Weiß Bregenz
 Floridsdorfer AC
-  FAC
+  | FAC
 SKN St. Pölten
 
 
@@ -138,37 +139,37 @@ Rapid Wien
 
 Union Dietach
 Union Weißkirchen
-  SPG Weißkirchen/Allhaming
+  | SPG Weißkirchen/Allhaming
 
 Sportunion St. Martin im Mühlkreis
-  Union St. Martin/M.
+  | Union St. Martin/M.
 
 SV Bad Schallerbach
 Union Mondsee
 Union Edelweiß Linz
-  SPG Edelweiss Linz/Neue Heimat
+  | SPG Edelweiss Linz/Neue Heimat
 
 Union Ostermiething
 
 SV Friedburg
-  SPG Friedburg/Pöndorf
-  SPG Friedburg/P.
+  | SPG Friedburg/Pöndorf
+  | SPG Friedburg/P.
 
 
 SV Grün-Weiß Micheldorf
-  SV GW Micheldorf
+  | SV GW Micheldorf
 
 SV Bad Ischl
 SU Bad Leonfelden
 Union Perg
- DSG Union Perg
+  | DSG Union Perg
 
 SPG Pregarten
 
 ASK St. Valentin
 SV Gmunden
 Union Rohrbach/Berg
-  UFC Rohrbach-Berg
+  | UFC Rohrbach-Berg
 
 SC Marchtrenk
 FC Hertha Wels
@@ -178,10 +179,10 @@ St. Florian/Niederneukirchen
 
 SV Gmunden
 
-  
 
 
-LASK Amateure OÖ 
+
+LASK Amateure OÖ
 Junge Wikinger Ried
 WAC Amateure
 
@@ -197,20 +198,20 @@ SK Rapid
 SC Imst
 WSG Tirol
 FC Pinzgau Saalfelden
-  FC Pinzgau
+  | FC Pinzgau
 FK Austria Wien
 
 SC Röthis
 SV Ried
 ASV Siegendorf 1930
-  ASV Siegendorf 
+  | ASV Siegendorf
 
 
 FAC Wien
 SV Leobendorf
 SKN St. Pölten
 St. Ann/A.
-  USV St. Anna
+  | USV St. Anna
 
 Admira Wacker
 SV Donau
@@ -222,39 +223,39 @@ SC Schwaz
 SW Bregenz
 
 SG ASK/HSV Klagenfurt
-  ASK Klagenfurt
+  | ASK Klagenfurt
 
 Sportunion Mauer
-  Union Mauer
+  | Union Mauer
 
 
 VfB Hohenems
 ASKÖ Oedt
 
 SV Wildon
-  Wildon
+  | Wildon
 
 FC Blau Weiss Linz
 SR Donaufeld
 
 
 SCR Altach
-  SC Rheindorf Altach
-  Altach
+  | SC Rheindorf Altach
+  | Altach
 
 Union Dietach
 FC Hertha Wels
-  SPG Wels
+  | SPG Wels
 
 
 SV Austria Salzburg
 SVG Reichenau
 
-DSC 
-  Deutschlandsberger SC
+DSC
+  | Deutschlandsberger SC
 
 SC Korneuburg
-  Korneuburg
+  | Korneuburg
 
 FC Marchfeld Donauauen
 First Vienna FC 1894
@@ -264,14 +265,14 @@ Bischofshofen Sportklub 1933
 TSV Hartberg
 
 ASV Draßburg
-  Draßburg
+  | Draßburg
 
 WAC
 FCM Traiskirchen
 SKU Amstetten
 
 SPG Wallern/St. Marienkirchen
-  SV Wallern
+  | SV Wallern
 
 FC Kitzbühel
 SV Wals-Grünau
@@ -295,12 +296,12 @@ DSV Leoben
 SCR Altach
 
 SK Treibach
-  Treibach
+  | Treibach
 
 SKU Amstetten
 
 ATuS Velden
-  Velden
+  | Velden
 
 SK Bischofshofen
 Schwarz-Weiß Bregenz

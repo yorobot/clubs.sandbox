@@ -1,64 +1,66 @@
-# super league 12 teams 
+= Switzerland =
+
+# super league 12 teams
 BSC Young Boys
-  Young Boys Bern
-  YB Bern
+  | Young Boys Bern
+  | YB Bern
 
 FC Lugano
-  Lugano
+  | Lugano
 
 Servette FC
-  Servette
-  Servette Genf
-  Genf
+  | Servette
+  | Servette Genf
+  | Genf
 
 FC Zürich
 FC St. Gallen
-   St. Gallen
+  | St. Gallen
 
 FC Winterthur
-   Winterthur
+  | Winterthur
 
 
 FC Luzern
-  Luzern
+  | Luzern
 FC Basel
-  Basel
+  | Basel
 
 ##  based in Yverdon-les-Bains
 Yverdon Sport FC
-  Yverdon-Sport FC
-  Yverdon
+  | Yverdon-Sport FC
+  | Yverdon
 
 
 FC Lausanne-Sport
-  Lausanne
+  | Lausanne
 
 Grasshopper Club Zürich
-  Grasshopper Zürich
-  Grasshoppers
+  | Grasshopper Zürich
+  | Grasshoppers
 
 
 Stade-Lausanne-Ouchy
 
 FC Sion
-  Sion
+  | Sion
 
 
 FC Lugano
 Grasshopper Club Zürich
 Yverdon Sport FC
-  Yverdon Sport Football Club
+  | Yverdon Sport Football Club
 
 
 FC Zürich
 FC Winterthur
- Winterthur
+  | Winterthur
 FC St. Gallen
-  St. Gallen
+  | St. Gallen
 
 BSC Young Boys
-  Berner Sport-Club Young Boys
-  Young Boys
+  | Berner Sport-Club Young Boys
+  | Young Boys
 
 
 FC Sion

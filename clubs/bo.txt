@@ -1,61 +1,63 @@
+= Bolivia =
+
 # League BOL 1 (3) - >Bolivien Liga Profesjonal<:
 
 
 Aurora,	Cochabamba
-  Club Aurora
-  Club Deportivo Aurora
+  | Club Aurora
+  | Club Deportivo Aurora
 Jorge Wilstermann,	Cochabamba
-  Wilstermann
-  Club Deportivo Jorge Wilstermann
+  | Wilstermann
+  | Club Deportivo Jorge Wilstermann
 Universitario de Vinto,	 Cochabamba
- Uni. de Vinto
- FC Universitario
- Fútbol Club Universitario de Vinto
+  | Uni. de Vinto
+  | FC Universitario
+  | Fútbol Club Universitario de Vinto
 Always Ready,	El Alto
- Club Always Ready
- CAR
+  | Club Always Ready
+  | CAR
 San Antonio Bulo Bulo,	Entre Ríos
-  San Ant. Bulo Bulo
-  San Antonio
+  | San Ant. Bulo Bulo
+  | San Antonio
 Club Deportivo San Antonio Bulo Bulo
 
 Bolívar,	La Paz
-Club Bolívar
+  | Club Bolívar
 
 The Strongest,	La Paz
-Club The Strongest
+  | Club The Strongest
 
 Guabirá, 	Montero
-  CD Guabirá
-Club Deportivo Guabirá 
+  | CD Guabirá
+  | Club Deportivo Guabirá
 
 GV San José, 	Oruro
-  GV San José Oruro
-  G. Villarroel CD San José 
-  Club Gualberto Villarroel Deportivo San José
+  | GV San José Oruro
+  | G. Villarroel CD San José
+  | Club Gualberto Villarroel Deportivo San José
 
 
 Nacional Potosí, 	Potosí
-Club Atlético Nacional Potosí
+  | Club Atlético Nacional Potosí
 
 Blooming,	Santa Cruz de la Sierra
-Club Social Cultural y Deportivo de Blooming
+  | Club Social Cultural y Deportivo de Blooming
 
 
 Oriente Petrolero,	Santa Cruz de la Sierra
-Club Deportivo Oriente Petrolero
+  | Club Deportivo Oriente Petrolero
 
 Real Santa Cruz,	Santa Cruz de la Sierra
-  Real Santa Cruz
-Club Real Santa Cruz
+  | Real Santa Cruz
+  | Club Real Santa Cruz
 
 Royal Pari, 	Santa Cruz de la Sierra
-Royal Pari Fútbol Club
+  | Royal Pari Fútbol Club
 
 Independiente Petrolero, 	Sucre
-  Independiente
-Club Independiente Petrolero
+  | Independiente
+  | Club Independiente Petrolero
 
 Real Tomayapo, 	Tarija
-Club Deportivo Real Tomayapo
-CD Real Tomayapo
+  | Club Deportivo Real Tomayapo
+  | CD Real Tomayapo
